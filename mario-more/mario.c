@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+void pyramid(int);
+
 int main(void)
 {
     int height;
@@ -14,6 +16,11 @@ int main(void)
     }
     while(height < 1 || height > 8);
 
+    pyramid(height);
+}
+
+void pyramid(int height)
+{
     for (int i = 1; i <= height; i++)
     {
         for (int j = height - i; j > 0; j--)
@@ -35,4 +42,3 @@ int main(void)
         printf("\n");
     }
 }
-

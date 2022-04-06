@@ -12,7 +12,7 @@ int main(void)
     {
         modulus = card_number % 10;
         printf("Modulus %i: %i\n", i, modulus);
-        card_number -= card_number - modulus;
+        card_number /= modulus;
         printf("Card number %i: %li\n", i, card_number);
 
         if (card_number == 0)

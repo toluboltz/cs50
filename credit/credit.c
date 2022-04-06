@@ -24,5 +24,5 @@ int main(void)
 
         i++;
     }
-    printf("Done\n");
+    printf("\n");
 }

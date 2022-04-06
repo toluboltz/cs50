@@ -15,7 +15,7 @@ int main(void)
         card_number = (card_number - modulus) / 10;
         // printf("Card number %i: %li\n", i, card_number);
 
-        printf("%i", mo)
+        printf("%i", modulus);
 
         if (card_number == 0)
         {

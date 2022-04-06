@@ -8,5 +8,9 @@ int main(void)
     int modulus = credit_number % 10;
     int divide = credit_number / 10;
 
-    
+    int i = 0;
+    while (true)
+    {
+        
+    }
 }

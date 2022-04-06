@@ -11,9 +11,11 @@ int main(void)
     while (true)
     {
         modulus = card_number % 10;
-        printf("Modulus %i: %i\n", i, modulus);
+        // printf("Modulus %i: %i\n", i, modulus);
         card_number = (card_number - modulus) / 10;
-        printf("Card number %i: %li\n", i, card_number);
+        // printf("Card number %i: %li\n", i, card_number);
+
+        printf("%i", mo)
 
         if (card_number == 0)
         {

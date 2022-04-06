@@ -4,6 +4,9 @@
 int main(void)
 {
     int height;
+
+    // Get the height of the pyramids.
+    // Height must be between 1 and 8 inclusive.
     do
     {
         height = get_int("Height: ");

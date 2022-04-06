@@ -8,6 +8,5 @@ int main(void)
     int modulus = credit_number % 10;
     int divide = credit_number / 10;
 
-    printf("Modulus: %i\n", modulus);
-    printf("Divide: %i\n", divide);
+    
 }

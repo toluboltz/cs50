@@ -26,7 +26,7 @@ int main(void)
             printf("%i X 2 = %i\n", modulus, modulus * 2);
         }
 
-        printf("%i", modulus);
+        // printf("%i", modulus);
 
         if (card_number == 0)
         {

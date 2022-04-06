@@ -21,6 +21,10 @@ int main(void)
         {
             other_sum += modulus;
         }
+        else
+        {
+            
+        }
 
         printf("%i", modulus);
 

@@ -4,7 +4,7 @@
 int main(void)
 {
     int height;
-    string gap = "  ";
+    int space = 2;
 
     // Get the height of the pyramids.
     // Height must be between 1 and 8 inclusive.
@@ -14,8 +14,25 @@ int main(void)
     }
     while(height < 1 || height > 8);
 
-    for (int i = 0; i < height; i++)
+    for (int i = 1; i <= height; i++)
     {
-        for ()
+        for (int j = height - i; j > 0; j--)
+        {
+            printf(" ");
+        }
+        for (int k = 0; k < i; k++)
+        {
+            printf("#");
+        }
+        for (int s = 0; s < space; s++)
+        {
+            printf(" ");
+        }
+        for (int k = 0; k < i; k++)
+        {
+            printf("#");
+        }
+        printf("\n");
     }
 }
+

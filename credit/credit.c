@@ -7,7 +7,7 @@ int main(void)
 
     int modulus;
 
-    int i = 1;
+    int i = 0;
     int other_sum = 0;
 
     while (true)
@@ -18,6 +18,9 @@ int main(void)
         // printf("Card number %i: %li\n", i, card_number);
 
         if (i % 2 == 0)
+        {
+            other_sum += modulus;
+        }
 
         printf("%i", modulus);
 
@@ -28,5 +31,6 @@ int main(void)
 
         i++;
     }
+    printf("\nOther Sum: %i", other_sum);
     printf("\n");
 }

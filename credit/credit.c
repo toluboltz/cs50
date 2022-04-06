@@ -23,7 +23,7 @@ int main(void)
         }
         else
         {
-            
+            printf("%i X 2 = %i\n", modulus, modulus * 2);
         }
 
         printf("%i", modulus);

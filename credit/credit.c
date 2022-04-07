@@ -28,7 +28,13 @@ int main(void)
             while (true)
             {
                 int remainder = product % 10;
-                
+                product = (product - remainder) / 10;
+
+                if (product == 0)
+                {
+                    break;
+                }
+                product_sum += product
             }
 
 

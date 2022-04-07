@@ -14,14 +14,13 @@ int main(void)
 
 int check_sum(long int card_number)
 {
-    int modulus;
     int other_sum = 0;
     int product_sum = 0;
     int i = 0;
 
     while (true)
     {
-        modulus = card_number % 10;
+        int modulus = card_number % 10;
 
         if (i % 2 == 0)
         {

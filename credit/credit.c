@@ -91,8 +91,6 @@ string verify_card(long int card_number, int check_sum)
     {
        card_number /= 10;
 
-       if 
-
         // increment the card length counter
         length++;
     }

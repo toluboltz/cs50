@@ -5,8 +5,10 @@ int check_sum(long int);
 
 int main(void)
 {
+    // prompt user for card number
     long int card_number = get_long("Number: ");
 
+    // compute the checksum
     int value = check_sum(card_number);
 
     printf("Answer: %i\n", value);
@@ -14,12 +16,17 @@ int main(void)
 
 int check_sum(long int card_number)
 {
-    int other_sum = 0;
+    // sum of the products digits and the other digits not
+    // multiplied by 2
     int product_sum = 0;
+    int other_sum = 0;
+
+    // variable to count the digits
     int i = 0;
 
     while (true)
     {
+        //
         int modulus = card_number % 10;
 
         if (i % 2 == 0)

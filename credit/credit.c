@@ -86,10 +86,16 @@ int check_sum(long int card_number)
 string verify_card(long int card_number, int check_sum)
 {
     int length = 1;
+    string start_with;
 
     while (true)
     {
        card_number /= 10;
+
+        if (card_number == 34 || card_number == 37)
+        {
+            start_with = 
+        }
 
         // increment the card length counter
         length++;

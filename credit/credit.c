@@ -1,20 +1,23 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int check_sum(int);
+int check_sum(long int);
 
 int main(void)
 {
-    long int card_number = 4003600000000014;
+    long int card_number = get_longint("Number: ");
 
-
+    int value = check_sum(card_number);
+    
+    printf("Answer: %i\n", value);
 }
 
-int check_sum(int card_number)
+int check_sum(long int card_number)
 {
     int modulus;
     int other_sum = 0;
     int product_sum = 0;
+    int i = 0;
 
     while (true)
     {
@@ -40,12 +43,7 @@ int check_sum(int card_number)
                     break;
                 }
             }
-
-
-            // printf("%i X 2 = %i\n", modulus, modulus * 2);
         }
-
-        // printf("%i", modulus);
 
         card_number = (card_number - modulus) / 10;
 
@@ -56,7 +54,6 @@ int check_sum(int card_number)
 
         i++;
     }
-    printf("\nOther Sum: %i", other_sum);
-    printf("\nProduct Sum: %i", product_sum);
-    printf("\n");
+
+    return product_sum + other_sum;
 }

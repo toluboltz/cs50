@@ -7,7 +7,6 @@ int main(void)
 
     int modulus;
 
-    int i = 0;
     int other_sum = 0;
     int product_sum = 0;
 
@@ -15,7 +14,7 @@ int main(void)
     {
         modulus = card_number % 10;
         // printf("Modulus %i: %i\n", i, modulus);
-        card_number = (card_number - modulus) / 10;
+
         // printf("Card number %i: %li\n", i, card_number);
 
         if (i % 2 == 0)
@@ -30,7 +29,7 @@ int main(void)
             {
                 remainder = product % 10;
                 product_sum += remainder;
-                
+
                 product = (product - remainder) / 10;
 
                 if (product == 0)
@@ -44,6 +43,8 @@ int main(void)
         }
 
         // printf("%i", modulus);
+
+        card_number = (card_number - modulus) / 10;
 
         if (card_number == 0)
         {

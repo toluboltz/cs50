@@ -37,12 +37,13 @@ int check_sum(long int card_number)
             int product = modulus * 2;
             while (true)
             {
-                //
+                // separate the products into its digits
+                // and add them together
                 int remainder = product % 10;
                 product_sum += remainder;
 
                 product = (product - remainder) / 10;
-
+                
                 if (product == 0)
                 {
                     break;

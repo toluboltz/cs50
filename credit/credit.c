@@ -100,8 +100,10 @@ string verify_card(long int number, int check_sum)
 
     while (true)
     {
-       number /= 10;
+        // integer division to get rid of last digit
+        number /= 10;
 
+        // check for the starting digits of the card
         if (number == 34 || number == 37)
         {
             starts_with = 1;
@@ -115,12 +117,13 @@ string verify_card(long int number, int check_sum)
             starts_with = 3;
         }
 
+        // if there are no more digits, break out of the loop
         if (number == 0)
         {
             break;
         }
 
-        // increment the card length counter
+        // increment the card length
         length++;
     }
 

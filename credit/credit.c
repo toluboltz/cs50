@@ -85,11 +85,16 @@ int check_sum(long int card_number)
 
 string verify_card(long int number, int check_sum)
 {
+    // validate checksum's last digit
+    // if not 0, the card is invalid
     if (check_sum % 10 != 0)
     {
         return "INVALID\n";
     }
 
+    // initialize variables to store length of the card
+    // and flag for what the number starts with:
+    // 0: invalid, 1: amex, 2: mastercard, 3: visa
     int length = 1;
     int starts_with = 0;
 
@@ -119,6 +124,7 @@ string verify_card(long int number, int check_sum)
         length++;
     }
 
+    // conditions to check the card length and starting digit(s)
     if (length == 15 && starts_with == 1)
     {
         return "AMEX\n";

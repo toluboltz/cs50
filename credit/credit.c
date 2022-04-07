@@ -34,11 +34,11 @@ int main(void)
                 {
                     break;
                 }
-                product_sum += remainder
+                product_sum += remainder;
             }
 
 
-            printf("%i X 2 = %i\n", modulus, modulus * 2);
+            // printf("%i X 2 = %i\n", modulus, modulus * 2);
         }
 
         // printf("%i", modulus);
@@ -51,5 +51,6 @@ int main(void)
         i++;
     }
     printf("\nOther Sum: %i", other_sum);
+    printf("\nProduct Sum: %i", product_sum);
     printf("\n");
 }

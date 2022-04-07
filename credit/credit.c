@@ -83,27 +83,50 @@ int check_sum(long int card_number)
     return product_sum + other_sum;
 }
 
-string verify_card(long int card_number, int check_sum)
+string verify_card(long int number, int check_sum)
 {
     int length = 1;
-    string start_with;
+    int starts_with;
 
     while (true)
     {
-       card_number /= 10;
+       number /= 10;
 
-        if (card_number == 34 || card_number == 37)
+        if (number == 34 || number == 37)
         {
-            start_with = 
+            starts_with = 1;
+        }
+        else if (number == 51 || number == 52 || number == 53 || number == 54 or number == 55)
+        {
+            starts_with = 2;
+        }
+        else if (number == 4)
+        {
+            starts_with = 3
+        }
+        else
+        {
+            starts_with = -1
         }
 
         // increment the card length counter
         length++;
     }
 
-    printf("Card Length: %i\n", length);
-
-
-    // return
-    return "Done";
+    if (length == 15 && starts_with == 1)
+    {
+        return "AMEX\n"
+    }
+    else if (length == 16 && starts_with == 2)
+    {
+        return "MASTERCARD\n"
+    }
+    else if (length == 13 && starts_with == 3 || length == 16 && starts_with == 3)
+    {
+        return "VISA\n"
+    }
+    else
+    {
+        return "INVALID\n"
+    }
 }

@@ -17,7 +17,7 @@ int main(void)
 
     string card_type = verify_card(card_number, sum_value);
 
-    printf("Divide: %li\n", card_number / 10);
+    printf("%s", card_type);
 }
 
 int check_sum(long int card_number)
@@ -110,6 +110,11 @@ string verify_card(long int number, int check_sum)
             starts_with = 3;
         }
 
+        if (number == 0)
+        {
+            break;
+        }
+
         // increment the card length counter
         length++;
     }
@@ -122,7 +127,7 @@ string verify_card(long int number, int check_sum)
     {
         return "MASTERCARD\n";
     }
-    else if (length == 13 && starts_with == 3 || length == 16 && starts_with == 3)
+    else if ((length == 13 && starts_with == 3) || (length == 16 && starts_with == 3))
     {
         return "VISA\n";
     }

@@ -29,13 +29,14 @@ int main(void)
             while (true)
             {
                 remainder = product % 10;
+                product_sum += remainder;
+                
                 product = (product - remainder) / 10;
 
                 if (product == 0)
                 {
                     break;
                 }
-                product_sum += remainder;
             }
 
 

@@ -1,7 +1,9 @@
 #include <cs50.h>
 #include <stdio.h>
 
+// function prototypes
 int check_sum(long int);
+string verify_card(int);
 
 int main(void)
 {
@@ -9,9 +11,11 @@ int main(void)
     long int card_number = get_long("Number: ");
 
     // compute the checksum
-    int value = check_sum(card_number);
+    int sum_value = check_sum(card_number);
 
-    printf("Answer: %i\n", value);
+    // printf("Answer: %i\n", value);
+
+    string card_type = verify_card(sum_value);
 }
 
 int check_sum(long int card_number)
@@ -37,13 +41,16 @@ int check_sum(long int card_number)
             int product = modulus * 2;
             while (true)
             {
-                // separate the products into its digits
+                // separate the products into its digits (starting from the last)
                 // and add them together
                 int remainder = product % 10;
                 product_sum += remainder;
 
+                // a little operation to remove the last digit
+                // e.g. (231 - 1) / 10 = 23
                 product = (product - remainder) / 10;
-                
+
+                // break out of the loop if no digits are left
                 if (product == 0)
                 {
                     break;
@@ -58,15 +65,23 @@ int check_sum(long int card_number)
             other_sum += modulus;
         }
 
+        // a little operation to remove the last digit
+        // e.g. (231 - 1) / 10 = 23
         card_number = (card_number - modulus) / 10;
 
+        // break out of the loop if no card numbers are left
         if (card_number == 0)
         {
             break;
         }
-
+        // increase counter by 1
         i++;
     }
-
+    // return the checksum
     return product_sum + other_sum;
+}
+
+string verify_card(int check_sum)
+{
+    
 }

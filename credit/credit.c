@@ -5,10 +5,10 @@ int check_sum(long int);
 
 int main(void)
 {
-    long int card_number = get_longint("Number: ");
+    long int card_number = get_long("Number: ");
 
     int value = check_sum(card_number);
-    
+
     printf("Answer: %i\n", value);
 }
 

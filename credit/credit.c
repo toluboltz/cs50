@@ -7,17 +7,18 @@ int main(void)
 {
     long int card_number = 4003600000000014;
 
-    int modulus;
 
+}
+
+int check_sum(int card_number)
+{
+    int modulus;
     int other_sum = 0;
     int product_sum = 0;
 
     while (true)
     {
         modulus = card_number % 10;
-        // printf("Modulus %i: %i\n", i, modulus);
-
-        // printf("Card number %i: %li\n", i, card_number);
 
         if (i % 2 == 0)
         {
@@ -58,9 +59,4 @@ int main(void)
     printf("\nOther Sum: %i", other_sum);
     printf("\nProduct Sum: %i", product_sum);
     printf("\n");
-}
-
-int check_sum(int card_number)
-{
-
 }

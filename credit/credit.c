@@ -34,7 +34,7 @@ int main(void)
                 {
                     break;
                 }
-                product_sum += product
+                product_sum += remainder
             }
 
 

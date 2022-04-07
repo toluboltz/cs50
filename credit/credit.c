@@ -85,8 +85,13 @@ int check_sum(long int card_number)
 
 string verify_card(long int number, int check_sum)
 {
+    if (check_sum % 10 != 0)
+    {
+        return "INVALID\n";
+    }
+
     int length = 1;
-    int starts_with;
+    int starts_with = 0;
 
     while (true)
     {
@@ -96,17 +101,13 @@ string verify_card(long int number, int check_sum)
         {
             starts_with = 1;
         }
-        else if (number == 51 || number == 52 || number == 53 || number == 54 or number == 55)
+        else if (number == 51 || number == 52 || number == 53 || number == 54 || number == 55)
         {
             starts_with = 2;
         }
         else if (number == 4)
         {
-            starts_with = 3
-        }
-        else
-        {
-            starts_with = -1
+            starts_with = 3;
         }
 
         // increment the card length counter
@@ -115,18 +116,18 @@ string verify_card(long int number, int check_sum)
 
     if (length == 15 && starts_with == 1)
     {
-        return "AMEX\n"
+        return "AMEX\n";
     }
     else if (length == 16 && starts_with == 2)
     {
-        return "MASTERCARD\n"
+        return "MASTERCARD\n";
     }
     else if (length == 13 && starts_with == 3 || length == 16 && starts_with == 3)
     {
-        return "VISA\n"
+        return "VISA\n";
     }
     else
     {
-        return "INVALID\n"
+        return "INVALID\n";
     }
 }

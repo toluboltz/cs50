@@ -16,6 +16,8 @@ int main(void)
     // printf("Answer: %i\n", value);
 
     string card_type = verify_card(card_number, sum_value);
+
+    printf("Divide: %li\n", card_number / 10);
 }
 
 int check_sum(long int card_number)
@@ -104,8 +106,8 @@ string verify_card(long int card_number, int check_sum)
         length++;
     }
 
-    // printf("Card Length: %i\n", length);
-    
+    printf("Card Length: %i\n", length);
+
 
     // return
     return "Done";

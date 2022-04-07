@@ -26,13 +26,16 @@ int check_sum(long int card_number)
 
     while (true)
     {
-        //
+        // operation to retrieve the last digit
         int modulus = card_number % 10;
 
+        // check for other digits
         if (i % 2 == 0)
         {
             other_sum += modulus;
         }
+        // check for every other digit starting from
+        // second-to-last
         else
         {
             int product = modulus * 2;

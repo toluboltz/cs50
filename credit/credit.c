@@ -99,5 +99,11 @@ string verify_card(long int card_number, int check_sum)
         {
             break;
         }
+
+        // increment the card length counter
+        length++;
     }
+    printf("Card Length: %i\n", length);
+    // return
+    return "Done";
 }

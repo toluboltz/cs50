@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int check_sum(int);
+
 int main(void)
 {
     long int card_number = 4003600000000014;
@@ -56,4 +58,9 @@ int main(void)
     printf("\nOther Sum: %i", other_sum);
     printf("\nProduct Sum: %i", product_sum);
     printf("\n");
+}
+
+int check_sum(int card_number)
+{
+
 }

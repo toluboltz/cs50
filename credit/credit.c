@@ -103,7 +103,10 @@ string verify_card(long int card_number, int check_sum)
         // increment the card length counter
         length++;
     }
-    printf("Card Length: %i\n", length);
+
+    // printf("Card Length: %i\n", length);
+    
+
     // return
     return "Done";
 }

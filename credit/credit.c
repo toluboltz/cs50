@@ -89,18 +89,9 @@ string verify_card(long int card_number, int check_sum)
 
     while (true)
     {
-        // operation to retrieve the last digit
-        int modulus = card_number % 10;
+       card_number /= 10;
 
-        // remove the last digit
-        // e.g. (231 - 1) / 10 = 23
-        card_number = (card_number - modulus) / 10;
-
-        // break out of the loop if no card numbers are left
-        if (card_number == 0)
-        {
-            break;
-        }
+       if 
 
         // increment the card length counter
         length++;

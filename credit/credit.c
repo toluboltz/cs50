@@ -25,9 +25,10 @@ int main(void)
         else
         {
             int product = modulus * 2;
+            int remainder;
             while (true)
             {
-                int remainder = product % 10;
+                remainder = product % 10;
                 product = (product - remainder) / 10;
 
                 if (product == 0)

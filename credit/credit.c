@@ -9,6 +9,7 @@ int main(void)
 
     int i = 0;
     int other_sum = 0;
+    int product_sum = 0;
 
     while (true)
     {
@@ -23,6 +24,8 @@ int main(void)
         }
         else
         {
+            int product = modulus * 2;
+            
             printf("%i X 2 = %i\n", modulus, modulus * 2);
         }
 

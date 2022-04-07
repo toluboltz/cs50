@@ -83,7 +83,7 @@ int check_sum(long int card_number)
 
 string verify_card(long int card_number, int check_sum)
 {
-    int length = 0;
+    int length = 1;
 
     while (true)
     {

@@ -3,7 +3,7 @@
 
 // function prototypes
 int check_sum(long int);
-string verify_card(int);
+string verify_card(long int, int);
 
 int main(void)
 {
@@ -15,7 +15,7 @@ int main(void)
 
     // printf("Answer: %i\n", value);
 
-    string card_type = verify_card(sum_value);
+    string card_type = verify_card(card_number, sum_value);
 }
 
 int check_sum(long int card_number)
@@ -81,7 +81,23 @@ int check_sum(long int card_number)
     return product_sum + other_sum;
 }
 
-string verify_card(int check_sum)
+string verify_card(long int card_number, int check_sum)
 {
-    
+    int length = 0;
+
+    while (true)
+    {
+        // operation to retrieve the last digit
+        int modulus = card_number % 10;
+
+        // remove the last digit
+        // e.g. (231 - 1) / 10 = 23
+        card_number = (card_number - modulus) / 10;
+
+        // break out of the loop if no card numbers are left
+        if (card_number == 0)
+        {
+            break;
+        }
+    }
 }

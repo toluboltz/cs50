@@ -25,6 +25,7 @@ int main(void)
         else
         {
             int product = modulus * 2;
+            int remainder = product % 10;
             
             printf("%i X 2 = %i\n", modulus, modulus * 2);
         }

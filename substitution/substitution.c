@@ -31,14 +31,15 @@ string encrypt_text(string text, string key)
 {
     // initialize the cipher text
     string ciphertext = text;
-    
+
     // Get the length of the plain text
     int len = strlen(text);
 
     for (int i = 0; i < len; i++)
     {
         // Compute the index of each letter in the plain text
-        int index = get_index(text[i]);
+        // and get the corresponding cipher from the key
+        key[get_index(text[i])];
     }
 }
 

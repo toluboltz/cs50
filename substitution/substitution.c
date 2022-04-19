@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+string encrypt_text(string, string);
+
 int main(int argc, string argv[])
 {
     // Validate the input
@@ -20,8 +22,11 @@ int main(int argc, string argv[])
     // Get plain text from user
     string plaintext = get_string("plaintext: ");
 
-
-
+    // Encrypt the plain text
+    string ciphertext = encrypt_text()
 }
 
-string 
+string encrypt_text(string text, string key)
+{
+
+}

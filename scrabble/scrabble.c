@@ -24,12 +24,14 @@ int main(void)
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
+    // Convert the word to uppercase
+    word = word.upper()
     // get the length of the word
     int len = strlen(word);
 
     for (int i = 0; i < len; i++)
     {
-        // Check if character is an alphabet
-        if
+        // Convert each letter to uppercase
+        char letter =
     }
 }

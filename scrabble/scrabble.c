@@ -32,7 +32,11 @@ int compute_score(string word)
         // Convert each letter to uppercase
         char letter = toupper(word[i]);
 
-        // Check if letter is 
+        // Check if letter is A-Z
+        if ((int) letter >= 65 && (int) letter <= 90)
+        {
+            
+        }
     }
     printf("\n");
 

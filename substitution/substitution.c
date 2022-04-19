@@ -43,21 +43,34 @@ string encrypt_text(string text, string key)
         // Convert each letter to uppercase
         char letter = toupper(text[i]);
 
-        // Get the value of the letter
+        // Get the ASCII value of the letter
         int letter_value = (int) letter;
 
-        // Check if letter is A-Z
+        // Check if each letter is an alphabet in A-Z (inclusive)
         if (letter_value >= 65 && letter_value <= 90)
         {
             // Compute the letter's index in the key
             int index = (int) character - 65;
+
+            // Preserve the case of the plain text
+            if (isupper(letter))
+            {
+                ciphertext[i] = toupper(key[index]);
+            }
+            else
+            {
+                ciphertext[i] = tolower(key[index]);
+            }
         }
         else
         {
+            // Incase of non-alphabet letters
+            // leave them as is.
             ciphertext[i] = text[i];
         }
 
     }
 
-    return "";
+    // Return the cipher text
+    return ciphertext;
 }

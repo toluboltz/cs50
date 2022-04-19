@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <ctype.h>
 
 string encrypt_text(string, string);
 int get_index(char);
@@ -39,7 +40,10 @@ string encrypt_text(string text, string key)
     {
         // Compute the index of each letter in the plain text
         // and get the corresponding cipher from the key
-        key[get_index(text[i])];
+        char cipher_letter = key[get_index(text[i])];
+
+        // Preserve the case of the plain text
+        if (text[i])
     }
 }
 

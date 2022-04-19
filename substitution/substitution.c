@@ -29,6 +29,9 @@ int main(int argc, string argv[])
 
 string encrypt_text(string text, string key)
 {
+    // initialize the cipher text
+    string ciphertext = text;
+    
     // Get the length of the plain text
     int len = strlen(text);
 

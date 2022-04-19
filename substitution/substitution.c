@@ -5,7 +5,7 @@
 #include <stdbool.h>
 
 string encrypt_text(string, string);
-bool is_alphabet(char);
+int is_alphabet(char);
 
 int main(int argc, string argv[])
 {
@@ -65,11 +65,13 @@ string encrypt_text(string text, string key)
 
     for (int i = 0; i < len; i++)
     {
-        // Check if each letter is an alphabet in A-Z (inclusive)
-        if (is_alphabet(text[i]))
+        // Check if letter is an alphabet.
+        // Return the ascii value if true, otherwise return 0.
+        int ascii = is_alphabet(text[i]);
+        if (ascii)
         {
             // Compute the letter's index in the key
-            int index = (int) text[i] - 65;
+            int index = ascii - 65;
 
             // Preserve the case of the plain text
             if (isupper(text[i]))
@@ -87,14 +89,13 @@ string encrypt_text(string text, string key)
             // leave them as is.
             ciphertext[i] = text[i];
         }
-
     }
 
     // Return the cipher text
     return ciphertext;
 }
 
-bool is_alphabet(char c)
+int is_alphabet(char c)
 {
     // Convert each letter to uppercase
     c = toupper(c);
@@ -104,5 +105,12 @@ bool is_alphabet(char c)
 
     // Return true if character is an uppercase alphabet.
     // Otherwise, return false
-    return ascii >= 65 && ascii <= 90;
+    if (ascii >= 65 && ascii <= 90)
+    {
+        return ascii;
+    }
+    else
+    {
+        return 0;
+    }
 }

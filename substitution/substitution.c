@@ -56,7 +56,7 @@ string encrypt_text(string text, string key)
             int index = letter_value - 65;
 
             // Preserve the case of the plain text
-            if (isupper(letter))
+            if (isupper(text[i]))
             {
                 ciphertext[i] = toupper(key[index]);
             }

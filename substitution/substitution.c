@@ -4,7 +4,6 @@
 #include <string.h>
 
 string encrypt_text(string, string);
-int get_index(char);
 
 int main(int argc, string argv[])
 {
@@ -50,29 +49,15 @@ string encrypt_text(string text, string key)
         // Check if letter is A-Z
         if (letter_value >= 65 && letter_value <= 90)
         {
-            // Get the score of the letter
-            score += POINTS[letter_value - 65];
+            // Compute the letter's index in the key
+            int index = (int) character - 65;
+        }
+        else
+        {
+            ciphertext[i] = text[i];
         }
 
-        // Compute the index of each letter in the plain text
-        // and get the corresponding cipher from the key
-
-        printf("%i\n", get_index(text[i]));
-
-        // Preserve the case of the plain text
     }
 
     return "";
-}
-
-int get_index(char character)
-{
-    // Convert character to uppercase
-    character = toupper(character);
-
-    // Compute the index
-    int index = (int) character - 65;
-
-    // return the index
-    return index;
 }

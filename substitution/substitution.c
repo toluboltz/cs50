@@ -29,10 +29,11 @@ int main(int argc, string argv[])
 
 string encrypt_text(string text, string key)
 {
-    
+
 }
 
 int get_index(char character)
 {
-
+    // Convert character to uppercase
+    
 }

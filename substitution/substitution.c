@@ -2,10 +2,8 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-#include <stdbool.h>
 
 string encrypt_text(string, string);
-int is_alphabet(char);
 
 int main(int argc, string argv[])
 {
@@ -29,19 +27,13 @@ int main(int argc, string argv[])
     // Get the length of the key
     int key_length = strlen(key);
 
-    // Check if every letter in key is an alphabet
-    for (int i = 0; i < key_length; i++)
+    // Check for non alphabets in the key
+    for (i = 0; i < key_length; i++)
     {
-        if (is_alphabet(key[i]))
-        {
-            continue;
-        }
-        else
-        {
-            printf("Key must contain only alphabets\n");
-            return 1;
-        }
+        toupper(key[i]);
+        
     }
+
 
     // Check for duplicate characters in the key
     for (int i = 0; i < key_length; i++)
@@ -61,7 +53,6 @@ int main(int argc, string argv[])
     string plaintext = get_string("plaintext: ");
 
     // Encrypt the plain text
-
     string ciphertext = encrypt_text(plaintext, key);
 
     // Print the cipher text
@@ -79,13 +70,17 @@ string encrypt_text(string text, string key)
 
     for (int i = 0; i < len; i++)
     {
-        // Check if letter is an alphabet.
-        // Return the ascii value if true, otherwise return 0.
-        int ascii = is_alphabet(text[i]);
-        if (ascii)
+        // Convert each letter to uppercase
+        char letter = toupper(text[i]);
+
+        // Get the ASCII value of the letter
+        int letter_value = (int) letter;
+
+        // Check if each letter is an alphabet in A-Z (inclusive)
+        if (letter_value >= 65 && letter_value <= 90)
         {
             // Compute the letter's index in the key
-            int index = ascii - 65;
+            int index = letter_value - 65;
 
             // Preserve the case of the plain text
             if (isupper(text[i]))
@@ -103,28 +98,9 @@ string encrypt_text(string text, string key)
             // leave them as is.
             ciphertext[i] = text[i];
         }
+
     }
 
     // Return the cipher text
     return ciphertext;
-}
-
-int is_alphabet(char c)
-{
-    // Convert each letter to uppercase
-    c = toupper(c);
-
-    // Get the ASCII value of the letter
-    int ascii = (int) c;
-
-    // Return true if character is an uppercase alphabet.
-    // Otherwise, return false
-    if (ascii >= 65 && ascii <= 90)
-    {
-        return ascii;
-    }
-    else
-    {
-        return 0;
-    }
 }

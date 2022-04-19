@@ -31,7 +31,8 @@ int compute_score(string word)
     {
         // Convert each letter to uppercase
         char letter = toupper(word[i]);
-        printf("%c", letter);
+
+        // Check if letter is 
     }
     printf("\n");
 

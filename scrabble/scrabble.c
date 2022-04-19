@@ -18,12 +18,25 @@ int main(void)
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
 
-    // TODO: Print the winner
+    // Print the winner
+    if (score1 > score2)
+    {
+        printf("Player 1 wins!\n");
+    }
+    else if (score2 > score1)
+    {
+        printf("Player 2 wins!\n");
+    }
+    else
+    {
+        printf("Tie!\n");
+    }
 }
 
 int compute_score(string word)
 {
-    // TODO: Compute and return score for string
+    // Initialize the score
+    int score = 0;
     // get the length of the word
     int len = strlen(word);
 
@@ -32,14 +45,17 @@ int compute_score(string word)
         // Convert each letter to uppercase
         char letter = toupper(word[i]);
 
+        // Get the value of the letter
+        int letter_value = (int) letter;
+
         // Check if letter is A-Z
-        if ((int) letter >= 65 && (int) letter <= 90)
+        if (letter_value >= 65 && letter_value <= 90)
         {
             // Get the score of the letter
-            
+            score += POINTS[letter_value - 65];
         }
     }
-    printf("\n");
 
-    return 0;
+    // Return the scoree
+    return score;
 }

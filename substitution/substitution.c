@@ -2,8 +2,10 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdbool.h>
 
 string encrypt_text(string, string);
+bool is_alphabet(char);
 
 int main(int argc, string argv[])
 {
@@ -21,11 +23,31 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    // Initialize the key
+    string key = argv[1];
+
+    // Get the length of the key
+    string key_length = strlen(key);
+
+    // Check if every letter in key is an alphabet
+    for (int i = 0; i < key_length; i++)
+    {
+        if (is_alphabet(key[i]))
+        {
+            continue;
+        }
+        else
+        {
+            printf("Key must contain only alphabets\n");
+            return 1;
+        }
+    }
+
     // Get plain text from user
     string plaintext = get_string("plaintext: ");
 
     // Encrypt the plain text
-    string key = argv[1];
+
     string ciphertext = encrypt_text(plaintext, key);
 
     // Print the cipher text
@@ -43,14 +65,8 @@ string encrypt_text(string text, string key)
 
     for (int i = 0; i < len; i++)
     {
-        // Convert each letter to uppercase
-        char letter = toupper(text[i]);
-
-        // Get the ASCII value of the letter
-        int letter_value = (int) letter;
-
         // Check if each letter is an alphabet in A-Z (inclusive)
-        if (letter_value >= 65 && letter_value <= 90)
+        if (is_alphabet(text[i]))
         {
             // Compute the letter's index in the key
             int index = letter_value - 65;
@@ -78,4 +94,13 @@ string encrypt_text(string text, string key)
     return ciphertext;
 }
 
-bool valid_alphabet()
+bool is_alphabet(char c)
+{
+    // Convert each letter to uppercase
+        char letter = toupper(text[i]);
+
+    // Get the ASCII value of the letter
+    int letter_value = (int) letter;
+
+    return letter_value >= 65 && letter_value <= 90;
+}

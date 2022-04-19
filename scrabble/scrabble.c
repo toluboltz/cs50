@@ -30,6 +30,10 @@ int compute_score(string word)
     for (int i = 0; i < len; i++)
     {
         // Convert each letter to uppercase
-        char letter = 
+        char letter = toupper(word[i]);
+        printf("%c", letter);
     }
+    printf("\n");
+
+    return 0;
 }

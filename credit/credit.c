@@ -124,6 +124,7 @@ string verify_card(long int number, int check_sum)
         }
 
         // increment the card length
+        
         length++;
     }
 

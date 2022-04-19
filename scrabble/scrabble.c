@@ -29,6 +29,7 @@ int compute_score(string word)
 
     for (int i = 0; i < len; i++)
     {
-        
+        // Check if character is an alphabet
+        if
     }
 }

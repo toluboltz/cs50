@@ -60,7 +60,7 @@ int main(int argc, string argv[])
     string ciphertext = encrypt_text(plaintext, key);
 
     // Print the cipher text
-    printf("ciphertext: %s\n", ciphertext);
+    printf("ciphertext: %s", ciphertext);
 }
 
 string encrypt_text(string text, string key)

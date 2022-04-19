@@ -43,6 +43,20 @@ int main(int argc, string argv[])
         }
     }
 
+    // Check for duplicate characters in the key
+    for (int i = 0; i < key_length; i++)
+    {
+        char c = key[i];
+        for (int j = 0; j < key_length; j++)
+        {
+            if (c == key[j])
+            {
+                printf("Key must contain each letter exactly once\n");
+                return 1;
+            }
+        }
+    }
+
     // Get plain text from user
     string plaintext = get_string("plaintext: ");
 

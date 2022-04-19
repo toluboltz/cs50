@@ -41,6 +41,19 @@ string encrypt_text(string text, string key)
 
     for (int i = 0; i < len; i++)
     {
+        // Convert each letter to uppercase
+        char letter = toupper(text[i]);
+
+        // Get the value of the letter
+        int letter_value = (int) letter;
+
+        // Check if letter is A-Z
+        if (letter_value >= 65 && letter_value <= 90)
+        {
+            // Get the score of the letter
+            score += POINTS[letter_value - 65];
+        }
+
         // Compute the index of each letter in the plain text
         // and get the corresponding cipher from the key
 

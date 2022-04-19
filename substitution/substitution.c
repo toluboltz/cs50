@@ -27,7 +27,7 @@ int main(int argc, string argv[])
     string key = argv[1];
 
     // Get the length of the key
-    string key_length = strlen(key);
+    int key_length = strlen(key);
 
     // Check if every letter in key is an alphabet
     for (int i = 0; i < key_length; i++)
@@ -97,10 +97,12 @@ string encrypt_text(string text, string key)
 bool is_alphabet(char c)
 {
     // Convert each letter to uppercase
-        char letter = toupper(text[i]);
+        char c = toupper(text[i]);
 
     // Get the ASCII value of the letter
-    int letter_value = (int) letter;
+    int ascii = (int) c;
 
-    return letter_value >= 65 && letter_value <= 90;
+    // Return true if character is an uppercase alphabet.
+    // Otherwise, return false
+    return ascii >= 65 && ascii <= 90;
 }

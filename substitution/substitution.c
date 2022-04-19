@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 string encrypt_text(string, string);
 int get_index(char);
@@ -25,7 +26,7 @@ int main(int argc, string argv[])
     string plaintext = get_string("plaintext: ");
 
     // Encrypt the plain text
-    string ciphertext = encrypt_text()
+
 }
 
 string encrypt_text(string text, string key)
@@ -40,23 +41,22 @@ string encrypt_text(string text, string key)
     {
         // Compute the index of each letter in the plain text
         // and get the corresponding cipher from the key
-        char cipher_letter = key[get_index(text[i])];
+
+        printf("%i\n", get_index(text[i]));
 
         // Preserve the case of the plain text
-        if (isupper(text[i]))
-        {
-            ciphertext[i]
-        }
     }
+
+    return "";
 }
 
 int get_index(char character)
 {
     // Convert character to uppercase
-    character = toupper(character)
+    character = toupper(character);
 
     // Compute the index
-    index = (int) character - 65;
+    int index = (int) character - 65;
 
     // return the index
     return index;

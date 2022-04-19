@@ -28,6 +28,9 @@ int main(int argc, string argv[])
     string key = argv[1];
     string ciphertext = encrypt_text(plaintext, key);
 
+    // Print the cipher text
+    printf("ciphertext: %s\n", ciphertext);
+
 }
 
 string encrypt_text(string text, string key)
@@ -50,7 +53,7 @@ string encrypt_text(string text, string key)
         if (letter_value >= 65 && letter_value <= 90)
         {
             // Compute the letter's index in the key
-            int index = (int) character - 65;
+            int index = letter_value - 65;
 
             // Preserve the case of the plain text
             if (isupper(letter))

@@ -35,6 +35,7 @@ int compute_score(string word)
         // Check if letter is A-Z
         if ((int) letter >= 65 && (int) letter <= 90)
         {
+            // Get the score of the letter
             
         }
     }

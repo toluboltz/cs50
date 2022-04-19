@@ -43,7 +43,10 @@ string encrypt_text(string text, string key)
         char cipher_letter = key[get_index(text[i])];
 
         // Preserve the case of the plain text
-        if (text[i])
+        if (isupper(text[i]))
+        {
+            ciphertext[i]
+        }
     }
 }
 

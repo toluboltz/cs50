@@ -45,6 +45,12 @@ int main(int argc, string argv[])
         char c = key[i];
         for (int j = 0; j < key_length; j++)
         {
+            // Skip itself
+            if (j == i)
+            {
+                continue;
+            }
+
             if (c == key[j])
             {
                 printf("Key must contain each letter exactly once\n");

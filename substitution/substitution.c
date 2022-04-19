@@ -26,6 +26,8 @@ int main(int argc, string argv[])
     string plaintext = get_string("plaintext: ");
 
     // Encrypt the plain text
+    string key = argv[1];
+    string ciphertext = encrypt_text(plaintext, key);
 
 }
 

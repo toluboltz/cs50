@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 string encrypt_text(string, string);
+int get_index(char);
 
 int main(int argc, string argv[])
 {
@@ -27,6 +28,11 @@ int main(int argc, string argv[])
 }
 
 string encrypt_text(string text, string key)
+{
+    
+}
+
+int get_index(char character)
 {
 
 }

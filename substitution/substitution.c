@@ -34,6 +34,7 @@ string encrypt_text(string text, string key)
 
     for (int i = 0; i < len; i++)
     {
+        // Compute the index of each letter in the plain text
         int index = get_index(text[i]);
     }
 }
@@ -43,7 +44,7 @@ int get_index(char character)
     // Convert character to uppercase
     character = toupper(character)
 
-    // Compute the index of the character
+    // Compute the index
     index = (int) character - 65;
 
     // return the index

@@ -4,5 +4,6 @@
 int main(int argc, string argv[])
 {
     // Validate the input key
-    
+    // For uniformity, convert the key to uppercase
+    key_
 }

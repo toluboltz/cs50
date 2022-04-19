@@ -29,7 +29,13 @@ int main(int argc, string argv[])
 
 string encrypt_text(string text, string key)
 {
+    // Get the length of the plain text
+    int len = strlen(text);
 
+    for (int i = 0; i < len; i++)
+    {
+        int index = get_index(text[i]);
+    }
 }
 
 int get_index(char character)
@@ -37,6 +43,9 @@ int get_index(char character)
     // Convert character to uppercase
     character = toupper(character)
 
-    // Compute and return the index of the character
-    return (int) character - 65
+    // Compute the index of the character
+    index = (int) character - 65;
+
+    // return the index
+    return index;
 }

@@ -28,12 +28,16 @@ int main(int argc, string argv[])
     int key_length = strlen(key);
 
     // Check for non alphabets in the key
-    for (i = 0; i < key_length; i++)
+    for (int i = 0; i < key_length; i++)
     {
-        toupper(key[i]);
-        
-    }
+        char c = toupper(key[i]);
 
+        if (!((int) c >= 65 && (int) c <= 90))
+        {
+            printf("Key must contain only alphabets\n");
+            return 1;
+        }
+    }
 
     // Check for duplicate characters in the key
     for (int i = 0; i < key_length; i++)
@@ -57,7 +61,6 @@ int main(int argc, string argv[])
 
     // Print the cipher text
     printf("ciphertext: %s\n", ciphertext);
-
 }
 
 string encrypt_text(string text, string key)

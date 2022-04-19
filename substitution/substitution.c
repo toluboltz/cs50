@@ -10,6 +10,12 @@ int main(int argc, string argv[])
         printf("Usage: ./substitution key\n");
         return 1;
     }
+    // Check if input key has 26 characters
+    if (strlen(argv[1]) != 26)
+    {
+        printf("Key must contain 26 characters.\n");
+        return 1;
+    }
     // For uniformity, convert the key to uppercase
 
 }

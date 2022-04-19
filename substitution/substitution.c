@@ -20,6 +20,8 @@ int main(int argc, string argv[])
     // Get plain text from user
     string plaintext = get_string("plaintext: ");
 
-    
+
 
 }
+
+string 

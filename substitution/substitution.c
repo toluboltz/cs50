@@ -69,7 +69,7 @@ string encrypt_text(string text, string key)
         if (is_alphabet(text[i]))
         {
             // Compute the letter's index in the key
-            int index = letter_value - 65;
+            int index = (int) text[i] - 65;
 
             // Preserve the case of the plain text
             if (isupper(text[i]))
@@ -97,7 +97,7 @@ string encrypt_text(string text, string key)
 bool is_alphabet(char c)
 {
     // Convert each letter to uppercase
-        char c = toupper(text[i]);
+    c = toupper(c);
 
     // Get the ASCII value of the letter
     int ascii = (int) c;

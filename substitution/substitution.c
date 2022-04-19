@@ -77,3 +77,5 @@ string encrypt_text(string text, string key)
     // Return the cipher text
     return ciphertext;
 }
+
+bool valid_alphabet()

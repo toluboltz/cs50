@@ -17,6 +17,9 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    //
+    // Get plain text from user
+    string plaintext = get_string("plaintext: ");
+
+    
 
 }

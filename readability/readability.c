@@ -57,7 +57,7 @@ int count_words(string text)
     // Loop through each character in the text
     for (int i = 0; i < text_length; i++)
     {
-        //
+        // If we find a space, increment count by 1
         if ((int) text[i] == 32)
         {
             count += 1;

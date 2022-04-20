@@ -21,9 +21,9 @@ int main(void)
     // Compute the number of sentences in the text
     int number_of_sentences = count_sentences(text);
 
-    printf("%d letters\n", number_of_letters);
-    printf("%d words\n", number_of_words);
-    printf("%d sentences\n", number_of_sentences);
+    // printf("%d letters\n", number_of_letters);
+    // printf("%d words\n", number_of_words);
+    // printf("%d sentences\n", number_of_sentences);
 
     // Compute the readability grade
     // Using Coleman-Liau Index: index = 0.0588 * L - 0.296 * S - 15.8
@@ -33,7 +33,7 @@ int main(void)
     float S = (float) number_of_sentences / number_of_words * 100;
     int index = 0.0588 * L - 0.296 * S - 15.8;
 
-    printf("L: %f, S: %f, Index: %d\n", L, S, index);
+    // printf("L: %f, S: %f, Index: %d\n", L, S, index);
 
     if (index < 1)
     {

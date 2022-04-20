@@ -24,6 +24,9 @@ int main(void)
     printf("%d letters\n", number_of_letters);
     printf("%d words\n", number_of_words);
     printf("%d sentences\n", number_of_sentences);
+
+    // Compute the readability grade
+    // Using Coleman-Liau Index: index = 0.0588 * L - 0.296 * S - 15.8
 }
 
 int count_letters(string text)

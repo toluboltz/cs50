@@ -2,7 +2,9 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <math.h>
 
+// Function prototypes
 int count_letters(string);
 int count_words(string);
 int count_sentences(string);
@@ -31,9 +33,12 @@ int main(void)
     //        S is the average number of sentences per 100 words
     float L = (float) number_of_letters / number_of_words * 100;
     float S = (float) number_of_sentences / number_of_words * 100;
-    int index = 0.0588 * L - 0.296 * S - 15.8;
+    float index = 0.0588 * L - 0.296 * S - 15.8;
 
-    printf("L: %f, S: %f, Index: %d\n", L, S, index);
+    // Round index to nearest integer
+    int grade = round(index);
+
+    printf("L: %f, S: %f, Index: %i\n", L, S, grade);
 
     if (index < 1)
     {
@@ -45,7 +50,7 @@ int main(void)
     }
     else
     {
-        printf("Grade %d\n", index);
+        printf("Grade %f\n", index);
     }
 }
 

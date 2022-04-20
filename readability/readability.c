@@ -5,6 +5,7 @@
 
 int count_letters(string);
 int count_words(string);
+int count_sentences(string);
 
 int main(void)
 {
@@ -74,4 +75,21 @@ int count_words(string text)
     }
 
     return count;
+}
+
+int count_sentences(string text)
+{
+    // Initialize the length of the text
+    int text_length = strlen(text);
+
+    // Initialize the number of letters to 1
+    // to account for the last word
+    int count = 0;
+
+    // Declare 
+    char fullstop = '.';
+    char exclamation = '!';
+    char question_mark = '?';
+
+
 }

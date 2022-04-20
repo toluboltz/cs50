@@ -27,6 +27,10 @@ int main(void)
 
     // Compute the readability grade
     // Using Coleman-Liau Index: index = 0.0588 * L - 0.296 * S - 15.8
+    // Where L is the average number of letters per 100 words, and
+    // S is the average number of sentences per 100 words
+    float L = number_of_letters / number_of_words * 100.0;
+    float S = number_of_sentences / number_of_words * 100.0;
 }
 
 int count_letters(string text)

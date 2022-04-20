@@ -14,7 +14,11 @@ int main(void)
     // Compute the number of letters in the text
     int number_of_letters = count_letters(text);
 
-    printf("%d\n", number_of_letters);
+    // Compute the number of words in the text
+    int number_of_words = count_words(text);
+
+    printf("%d letters\n", number_of_letters);
+    printf("%d words\n", number_of_words);
 }
 
 int count_letters(string text)
@@ -51,8 +55,9 @@ int count_words(string text)
     // Initialize the length of the text
     int text_length = strlen(text);
 
-    // Initialize the number of letters
-    int count = 0;
+    // Initialize the number of letters to 1
+    // to account for the last word
+    int count = 1;
 
     // Loop through each character in the text
     for (int i = 0; i < text_length; i++)
@@ -68,5 +73,5 @@ int count_words(string text)
         }
     }
 
-    return 0;
+    return count;
 }

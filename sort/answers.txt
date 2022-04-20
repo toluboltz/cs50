@@ -1,11 +1,11 @@
-sort1 uses: TODO
+sort1 uses: bubble sort
 
-How do you know?: TODO
+How do you know?: it has the lowest time on sorted values
 
-sort2 uses: TODO
+sort2 uses: merge sort
 
-How do you know?: TODO
+How do you know?: it has the best time on non-sorted values
 
-sort3 uses: TODO
+sort3 uses: selection sort
 
-How do you know?: TODO
+How do you know?: the time on sorted and non-sorted values are similar

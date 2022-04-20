@@ -31,6 +31,20 @@ int main(void)
     // S is the average number of sentences per 100 words
     float L = number_of_letters / number_of_words * 100.0;
     float S = number_of_sentences / number_of_words * 100.0;
+    int index = 0.0588 * L - 0.296 * S - 15.8;
+
+    if (index < 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else if (index >= 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else
+    {
+        printf("Grade %d\n", index);
+    }
 }
 
 int count_letters(string text)

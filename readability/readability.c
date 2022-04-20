@@ -4,6 +4,7 @@
 #include <string.h>
 
 int count_letters(string);
+int count_words(string);
 
 int main(void)
 {
@@ -43,4 +44,21 @@ int count_letters(string text)
     }
     // Return the number of letters
     return count;
+}
+
+int count_words(string text)
+{
+    // Initialize the length of the text
+    int text_length = strlen(text);
+
+    // Initialize the number of letters
+    int count = 0;
+
+    // Loop through each character in the text
+    for (int i = 0; i < text_length; i++)
+    {
+        
+    }
+
+    return 0;
 }

@@ -57,7 +57,15 @@ int count_words(string text)
     // Loop through each character in the text
     for (int i = 0; i < text_length; i++)
     {
-        
+        //
+        if ((int) text[i] == 32)
+        {
+            count += 1;
+        }
+        else
+        {
+            continue;
+        }
     }
 
     return 0;

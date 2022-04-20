@@ -18,8 +18,12 @@ int main(void)
     // Compute the number of words in the text
     int number_of_words = count_words(text);
 
+    // Compute the number of sentences in the text
+    int number_of_sentences = count_sentences(text);
+
     printf("%d letters\n", number_of_letters);
     printf("%d words\n", number_of_words);
+    printf("%d sentences\n", number_of_sentences);
 }
 
 int count_letters(string text)
@@ -74,6 +78,7 @@ int count_words(string text)
         }
     }
 
+    // Return the number of words
     return count;
 }
 
@@ -86,10 +91,19 @@ int count_sentences(string text)
     // to account for the last word
     int count = 0;
 
-    // Declare 
-    char fullstop = '.';
-    char exclamation = '!';
-    char question_mark = '?';
+    // Loop through each character in the text
+    for (int i = 0; i < text_length; i++)
+    {
+        if (text[i] == '.' || text[i] == '!' || text[i] == '?')
+        {
+            count += 1;
+        }
+        else
+        {
+            continue;
+        }
+    }
 
-
+    // Return the number of sentences
+    return count;
 }

@@ -66,7 +66,8 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    // TODO
+    // Check if name is one of the candidates on the ballot
+    // and increment their vote tally by 1
     for (int i = 0; i < candidate_count; i++)
     {
         if (strcmp(name, candidates[i].name) == 0)
@@ -75,16 +76,17 @@ bool vote(string name)
             return true;
         }
     }
+    // If candidate does not exist, return false
     return false;
 }
 
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    // TODO
-    // variable to keep track of highest votes
+    // Keep track of highest vote count
     int highest = 0;
 
+    // Find the highest number of votes
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > highest)
@@ -93,6 +95,7 @@ void print_winner(void)
         }
     }
 
+    // Find the candidate(s) with the highest number of votes
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes == highest)

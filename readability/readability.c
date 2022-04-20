@@ -29,8 +29,8 @@ int main(void)
     // Using Coleman-Liau Index: index = 0.0588 * L - 0.296 * S - 15.8
     // Where: L is the average number of letters per 100 words, and
     //        S is the average number of sentences per 100 words
-    float L = number_of_letters / number_of_words * 100.0;
-    float S = number_of_sentences / number_of_words * 100.0;
+    float L = (float) number_of_letters / number_of_words * 100;
+    float S = (float) number_of_sentences / number_of_words * 100;
     int index = 0.0588 * L - 0.296 * S - 15.8;
 
     printf("L: %f, S: %f, Index: %d\n", L, S, index);

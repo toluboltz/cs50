@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 // Max number of candidates
 #define MAX 9
@@ -99,28 +100,69 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
-    // TODO
+    // Check if name is in the ballot and assign
+    // the rank to the candidate
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (strcmp(name, candidates[i]) == 0)
+        {
+            ranks[rank] = i;
+            return true;
+        }
+    }
+    // Otherwise, return false
     return false;
 }
 
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
-    // TODO
+    for (int i = 0; i < candidate_count - 1; i++)
+    {
+        for (int j = i + 1; j < candidate_count; j++)
+        {
+            preferences[ranks[i]][ranks[j]] += 1;
+        }
+    }
     return;
 }
 
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    // TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (preferences[i][j] > preferences[j][i])
+            {
+                pairs[pair_count].winner = i;
+                pairs[pair_count].loser = j;
+
+                // update pair_count
+                pair_count += 1;
+            }
+            else if (preferences[j][i] > preferences[i][j])
+            {
+                pairs[pair_count].winner = j;
+                pairs[pair_count].loser = i;
+
+                // update pair_count
+                pair_count += 1;
+            }
+            else
+            {
+                continue;
+            }
+        }
+    }
     return;
 }
 
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // TODO
+    
     return;
 }
 

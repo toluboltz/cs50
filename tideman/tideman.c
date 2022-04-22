@@ -200,11 +200,11 @@ bool is_cyclic(int loser, int winner)
         return true;
     }
 
-    for (int candidate = 0; candidate < candidate_count; candidate++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if (locked[loser][candidate])
+        if (locked[loser][i])
         {
-            return is_cyclic(candidate, winner);
+            return is_cyclic(i, winner);
         }
     }
     return false;

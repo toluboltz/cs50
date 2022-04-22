@@ -206,7 +206,10 @@ bool is_cyclic(int end_node, int start_node)
         // Check if winner is locked to i
         if (locked[end_node][i])
         {
-            is_cyclic(i, start_node);
+            if (is_cyclic(i, start_node))
+            {
+                return true;
+            }
         }
     }
     return false;

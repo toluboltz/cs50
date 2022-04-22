@@ -229,11 +229,14 @@ void print_winner(void)
 
     for (int col = 0; col < candidate_count; col++)
     {
+        is_source = true;
+        
         for (int row = 0; row < candidate_count; row++)
         {
             if (locked[row][col])
             {
                 is_source = false;
+                continue;
             }
         }
 

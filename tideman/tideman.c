@@ -158,38 +158,18 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // Let's use bubble sort
-    // variable to track what index to stop
-    int stop = pair_count;
-
-    // variable to track number of swaps made for each pass through
-    int swaps = -1;
-
     for (int i = 0; i < pair_count; i++)
     {
-        swaps = 0;
-        stop -= 1;
-
-        // For each pass through the array
-        for (int j = 0; j < stop; j++)
-        {
-            // If the value at the current index is less that the next,
-            // swap them
-            if (preferences[pairs[j + 1].winner][pairs[j + 1].loser] > preferences[pairs[j].winner][pairs[j].loser])
+        int max = i;
+        for (int j = i + 1; j < pair_count; j++) {
+            if (preferences[pairs[j].winner][pairs[j].loser] > preferences[pairs[max].winner][pairs[max].loser])
             {
-                pair temp = pairs[j];
-                pairs[j] = pairs[j + 1];
-                pairs[j + 1] = temp;
-
-                // Increment the swap counter
-                swaps += 1;
+                max = j;
             }
         }
-        // Check if array is sorted
-        if (swaps == 0)
-        {
-            return;
-        }
+        pair temp = pairs[i];
+        pairs[i] = pairs[max];
+        pairs[max] = temp;
     }
 }
 

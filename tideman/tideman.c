@@ -193,7 +193,7 @@ void sort_pairs(void)
     }
 }
 
-bool is_cyclic(int loser, int winner)
+bool is_cyclic(int winner, int loser)
 {
     if (locked[loser][winner] == true)
     {
@@ -204,7 +204,7 @@ bool is_cyclic(int loser, int winner)
     {
         if (locked[i][winner])
         {
-            is_cyclic(i, winner);
+            is_cyclic(i, loser);
         }
     }
     return false;
@@ -215,7 +215,7 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
-        if (!is_cyclic(pairs[i].loser, pairs[i].winner))
+        if (!is_cyclic(pairs[i].winner, pairs[i].loser))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }

@@ -195,7 +195,7 @@ void sort_pairs(void)
 
 bool is_cyclic(int loser, int winner)
 {
-    if (loser == winner)
+    if (locked[loser][winner] == true)
     {
         return true;
     }

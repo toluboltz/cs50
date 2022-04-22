@@ -174,9 +174,25 @@ void sort_pairs(void)
         swaps = 0;
         stop -= 1;
 
+        // For each pass through the array
         for (int j = 0; j < stop; j++)
         {
-            
+            // If the value at the current index is less that the next,
+            // swap them
+            if (arr[j + 1] > arr[j])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+
+                // Increment the swap counter
+                swaps += 1;
+            }
+        }
+        // Check if array is sorted
+        if (swaps == 0)
+        {
+            return;
         }
     }
     return;

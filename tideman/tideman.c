@@ -198,6 +198,8 @@ void sort_pairs(void)
     return;
 }
 
+bool is_cyclic(int )
+
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {

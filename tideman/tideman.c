@@ -125,7 +125,6 @@ void record_preferences(int ranks[])
             preferences[ranks[i]][ranks[j]] += 1;
         }
     }
-    return;
 }
 
 // Record pairs of candidates where one is preferred over the other
@@ -151,13 +150,8 @@ void add_pairs(void)
                 // update pair_count
                 pair_count += 1;
             }
-            else
-            {
-                continue;
-            }
         }
     }
-    return;
 }
 
 // Sort pairs in decreasing order by strength of victory
@@ -196,7 +190,6 @@ void sort_pairs(void)
             return;
         }
     }
-    return;
 }
 
 bool is_cyclic(int loser, int winner)

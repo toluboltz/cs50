@@ -204,7 +204,7 @@ bool is_cyclic(int loser, int winner)
     {
         if (locked[loser][candidate])
         {
-            is_cyclic(candidate, winner);
+            return is_cyclic(candidate, winner);
         }
     }
     return false;

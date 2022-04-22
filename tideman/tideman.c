@@ -162,7 +162,12 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    
+    // to get access to the number of voters who prefer the winner
+    // loop through the pair count
+    for (int i = 0; i < pair_count; i++)
+    {
+        
+    }
     return;
 }
 

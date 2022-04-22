@@ -224,7 +224,6 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    printf("I'm here\n");
     bool is_source = true;
 
     for (int col = 0; col < candidate_count; col++)

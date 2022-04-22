@@ -179,7 +179,7 @@ void sort_pairs(void)
         {
             // If the value at the current index is less that the next,
             // swap them
-            if (arr[j + 1] > arr[j])
+            if (pairs[j + 1]. > arr[j])
             {
                 int temp = arr[j];
                 arr[j] = arr[j + 1];

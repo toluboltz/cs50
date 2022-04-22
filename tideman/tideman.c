@@ -181,9 +181,9 @@ void sort_pairs(void)
             // swap them
             if (preferences[pairs[j + 1].winner][pairs[j + 1].loser] > preferences[pairs[j].winner][pairs[j].loser])
             {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+                pair temp = pairs[j];
+                pairs[j] = pairs[j + 1];
+                pairs[j + 1] = temp;
 
                 // Increment the swap counter
                 swaps += 1;

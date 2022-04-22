@@ -202,9 +202,9 @@ bool is_cyclic(int loser, int winner)
 
     for (int i = 0; i < candidate_count; i++)
     {
-        if (locked[loser][i])
+        if (locked[i][winner])
         {
-            return is_cyclic(i, winner);
+            is_cyclic(i, winner);
         }
     }
     return false;

@@ -179,7 +179,7 @@ void sort_pairs(void)
         {
             // If the value at the current index is less that the next,
             // swap them
-            if (pairs[j + 1]. > arr[j])
+            if (preferences[pairs[j + 1].winner][pairs[j + 1].loser] > preferences[pairs[j].winner][pairs[j].loser])
             {
                 int temp = arr[j];
                 arr[j] = arr[j + 1];

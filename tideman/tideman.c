@@ -162,11 +162,22 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // to get access to the number of voters who prefer the winner
-    // loop through the pair count
+    // Let's use bubble sort
+    // variable to track what index to stop
+    int stop = pair_count;
+
+    // variable to track number of swaps made for each pass through
+    int swaps = -1;
+
     for (int i = 0; i < pair_count; i++)
     {
-        pairs[i].winner
+        swaps = 0;
+        stop -= 1;
+
+        for (int j = 0; j < stop; j++)
+        {
+            
+        }
     }
     return;
 }

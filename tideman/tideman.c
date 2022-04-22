@@ -206,7 +206,7 @@ bool is_cyclic(int loser, int winner)
         return true;
     }
 
-    for (candidate = 0; i < candidate_count; candidate++)
+    for (int candidate = 0; candidate < candidate_count; candidate++)
     {
         if (locked[loser][candidate])
         {
@@ -245,7 +245,8 @@ void print_winner(void)
 
         if (is_source)
         {
-            printf(")
+            printf("%s\n", candidates[col]);
+            break;
         }
     }
     return;

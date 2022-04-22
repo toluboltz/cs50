@@ -249,5 +249,4 @@ void print_winner(void)
             break;
         }
     }
-    return;
 }

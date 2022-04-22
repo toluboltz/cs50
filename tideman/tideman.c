@@ -193,10 +193,10 @@ void sort_pairs(void)
     }
 }
 
-bool is_cyclic(int winner, int loser)
+bool is_cyclic(int end_node, int start_node)
 {
     // If already locked
-    if (locked[loser][winner] == true)
+    if (end_node == start_node)
     {
         return true;
     }
@@ -204,9 +204,9 @@ bool is_cyclic(int winner, int loser)
     for (int i = 0; i < candidate_count; i++)
     {
         // Check if winner is locked to i
-        if (locked[i][winner])
+        if (locked[end_node][i])
         {
-            return is_cyclic(i, loser);
+            is_cyclic(i, start_node);
         }
     }
     return false;
@@ -217,7 +217,7 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
-        if (!is_cyclic(pairs[i].winner, pairs[i].loser))
+        if (!is_cyclic(pairs[i].loser, pairs[i].winner))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }

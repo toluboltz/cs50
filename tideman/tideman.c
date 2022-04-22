@@ -195,6 +195,7 @@ void sort_pairs(void)
 
 bool is_cyclic(int winner, int loser)
 {
+    // If already locked
     if (locked[loser][winner] == true)
     {
         return true;
@@ -202,6 +203,7 @@ bool is_cyclic(int winner, int loser)
 
     for (int i = 0; i < candidate_count; i++)
     {
+        // Check if winner is locked to i
         if (locked[i][winner])
         {
             return is_cyclic(i, loser);
@@ -227,6 +229,8 @@ void print_winner(void)
 {
     int winner = 0;
 
+    // Look for the source of the graph
+    // That means the column that has all false values
     for (int col = 0; col < candidate_count; col++)
     {
         bool is_source = true;

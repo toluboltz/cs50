@@ -204,9 +204,9 @@ bool is_cyclic(int winner, int loser)
     for (int i = 0; i < candidate_count; i++)
     {
         // Check if winner is locked to i
-        if (!locked[i][winner])
+        if (locked[i][winner])
         {
-            is_cyclic(i, loser);
+            return is_cyclic(i, loser);
         }
     }
     return false;

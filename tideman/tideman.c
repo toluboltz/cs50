@@ -33,6 +33,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+bool is_cyclic(int loser, int winner);
 
 int main(int argc, string argv[])
 {
@@ -198,18 +199,38 @@ void sort_pairs(void)
     return;
 }
 
-bool is_cyclic(int )
+bool is_cyclic(int loser, int winner)
+{
+    if (loser == winner)
+    {
+        return true;
+    }
+
+    for (candidate = 0; i < candidate_count; candidate++)
+    {
+        if (locked[loser][candidate])
+        {
+            is_cyclic(candidate, winner);
+        }
+    }
+    return false;
+}
 
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // TODO
-    return;
+    for (int i = 0; i < pair_count; i++)
+    {
+        if (!is_cyclic(pairs[i].loser, pairs[i].winner))
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
+    }
 }
 
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
+    
     return;
 }

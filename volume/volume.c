@@ -38,10 +38,11 @@ int main(int argc, char *argv[])
     fread(header, sizeof(uint8_t), HEADER_SIZE, input);
     fwrite(header, sizeof(uint8_t), HEADER_SIZE, output);
 
-    // TODO: Read samples from input file and write updated data to output file
+    // Read samples from input file and write updated data to output file
     int16_t buffer;
     while (fread(&buffer, sizeof(int16_t), 1, input) == 1)
     {
+        // Scale volume of sample by input factor
         buffer *= factor;
         fwrite(&buffer, sizeof(int16_t), 1, output);
     }

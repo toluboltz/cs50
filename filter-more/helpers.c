@@ -176,13 +176,78 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int gx_red = 0;
             int gx_green = 0;
             int gx_blue = 0;
+
             int gy_red = 0;
             int gy_green = 0;
             int gy_blue = 0;
             // top-left
             if (top_left[0] >= 0 && top_left[1] >= 0)
             {
-                
+                gx_red += -1 * image_copy[top_left[0]][top_right[1]].rgbtRed;
+                gx_green += -1 * image_copy[top_left[0]][top_right[1]].rgbtGreen;
+                gx_blue += -1 * image_copy[top_left[0]][top_right[1]].rgbtBlue;
+
+                gy_red += -1 * image_copy[top_left[0]][top_right[1]].rgbtRed;
+                gy_green += -1 * image_copy[top_left[0]][top_right[1]].rgbtGreen;
+                gy_blue += -1 * image_copy[top_left[0]][top_right[1]].rgbtBlue;
+            }
+            // top-middle
+            if (top_middle[0] >= 0)
+            {
+                gy_red += -2 * image_copy[top_middle[0]][top_middle[1]].rgbtRed;
+                gy_green += -2 * image_copy[top_middle[0]][top_middle[1]].rgbtGreen;
+                gy_blue += -2 * image_copy[top_middle[0]][top_middle[1]].rgbtBlue;
+            }
+            // top-right
+            if (top_right[0] >= 0 && top_right[1] < width)
+            {
+                gx_red += 1 * image_copy[top_right[0]][top_right[1]].rgbtRed;
+                gx_green += 1 * image_copy[top_right[0]][top_right[1]].rgbtGreen;
+                gx_blue += 1 * image_copy[top_right[0]][top_right[1]].rgbtBlue;
+
+                gy_red += -1 * image_copy[top_right[0]][top_middle[1]].rgbtRed;
+                gy_green += -1 * image_copy[top_middle[0]][top_middle[1]].rgbtGreen;
+                gy_blue += -1 * image_copy[top_middle[0]][top_middle[1]].rgbtBlue;
+            }
+            // middle-left
+            if (middle_left[1] >= 0)
+            {
+                sum_red += image_copy[middle_left[0]][middle_left[1]].rgbtRed;
+                sum_green += image_copy[middle_left[0]][middle_left[1]].rgbtGreen;
+                sum_blue += image_copy[middle_left[0]][middle_left[1]].rgbtBlue;
+                pixel_count += 1;
+            }
+            // middle-right
+            if (middle_right[1] < width)
+            {
+                sum_red += image_copy[middle_right[0]][middle_right[1]].rgbtRed;
+                sum_green += image_copy[middle_right[0]][middle_right[1]].rgbtGreen;
+                sum_blue += image_copy[middle_right[0]][middle_right[1]].rgbtBlue;
+                pixel_count += 1;
+            }
+            // bottom-left
+            if (bottom_left[0] < height && bottom_left[1] >= 0)
+            {
+                sum_red += image_copy[bottom_left[0]][bottom_left[1]].rgbtRed;
+                sum_green += image_copy[bottom_left[0]][bottom_left[1]].rgbtGreen;
+                sum_blue += image_copy[bottom_left[0]][bottom_left[1]].rgbtBlue;
+                pixel_count += 1;
+            }
+            // bottom-middle
+            if (bottom_middle[0] < height)
+            {
+                sum_red += image_copy[bottom_middle[0]][bottom_middle[1]].rgbtRed;
+                sum_green += image_copy[bottom_middle[0]][bottom_middle[1]].rgbtGreen;
+                sum_blue += image_copy[bottom_middle[0]][bottom_middle[1]].rgbtBlue;
+                pixel_count += 1;
+            }
+            // bottom-right
+            if (bottom_right[0] < height && bottom_right[1] < width)
+            {
+                sum_red += image_copy[bottom_right[0]][bottom_right[1]].rgbtRed;
+                sum_green += image_copy[bottom_right[0]][bottom_right[1]].rgbtGreen;
+                sum_blue += image_copy[bottom_right[0]][bottom_right[1]].rgbtBlue;
+                pixel_count += 1;
             }
         }
     }

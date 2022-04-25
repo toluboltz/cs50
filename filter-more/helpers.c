@@ -64,13 +64,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int bottom_middle[] = {i + 1, j};
             int bottom_right[] = {i + 1, j + 1};
 
-            // middle-pixel
             // Initialize sum for each color and pixel count
+            // middle-pixel
             int sum_red = image_copy[i][j].rgbtRed;
             int sum_blue = image_copy[i][j].rgbtGreen;
             int sum_green = image_copy[i][j].rgbtBlue;
             int pixel_count = 1;
-
             // top-left
             if (top_left[0] >= 0 && top_left[1] >= 0)
             {
@@ -161,7 +160,26 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            
+            // Initialize the indices of all pixels
+            // within one row and column of the original pixel
+            int top_left[] = {i - 1, j - 1};
+            int top_middle[] = {i - 1, j};
+            int top_right[] = {i - 1, j + 1};
+            int middle_left[]= {i, j - 1};
+            int middle_right[] = {i, j + 1};
+            int bottom_left[] = {i + 1, j -1};
+            int bottom_middle[] = {i + 1, j};
+            int bottom_right[] = {i + 1, j + 1};
+
+            // Compute Gx and Gy for RGB channels
+            // middle-pixel
+            int gx = 0;
+            int gy = 0;
+            // top-left
+            if (top_left[0] >= 0 && top_left[1] >= 0)
+            {
+                
+            }
         }
     }
 }

@@ -39,7 +39,16 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            // Initialize the indices of all pixels
+        // within one row and column of the original pixel
+        int top-left = i
+        }
+    }
 }
 
 // Detect edges

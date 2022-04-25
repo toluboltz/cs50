@@ -23,10 +23,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     for (int i = 0; i < height; i++)
     {
-        RGBTRIPLE reversed_width[width];
-
         for (int j = 0, k = width - 1; j < width && k > 0; j++, k--)
         {
+            // Starting from opposite ends, swap the RGB values
             if (k > j)
             {
                 RGBTRIPLE temp = image[i][j];

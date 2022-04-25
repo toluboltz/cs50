@@ -252,7 +252,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 gy_green += 1 * image_copy[bottom_right[0]][bottom_right[1]].rgbtGreen;
                 gy_blue += 1 * image_copy[bottom_right[0]][bottom_right[1]].rgbtBlue;
             }
-            
+            double sobel_red = sqrt(pow(gx_red, 2) + pow(gy_red, 2));
+            double sobel_green = sqrt(pow(gx_green, 2) + pow(gy_green, 2));
+            double sobel_blue = sqrt(pow(gx_blue, 2) + pow(gy_blue, 2));
         }
     }
 }

@@ -60,7 +60,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int top_right[] = {i - 1, j + 1};
             int middle_left[]= {i, j - 1};
             int middle_right[] = {i, j + 1};
-            int bottom_left[] = {i + 1, j -1};
+            int bottom_left[] = {i + 1, j - 1};
             int bottom_middle[] = {i + 1, j};
             int bottom_right[] = {i + 1, j + 1};
 

@@ -97,6 +97,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 sum_blue += image[middle_right[0]][middle_right[1]].rgbtBlue;
                 pixel_count += 1;
             }
+            if (bottom_left[0] < height && bottom_left[1] >= 0)
+            {
+                sum_red += image[middle_right[0]][middle_right[1]].rgbtRed;
+                sum_green += image[middle_right[0]][middle_right[1]].rgbtGreen;
+                sum_blue += image[middle_right[0]][middle_right[1]].rgbtBlue;
+                pixel_count += 1;
+            }
         }
     }
 }

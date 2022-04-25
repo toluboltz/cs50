@@ -21,7 +21,15 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    for (int i = 0; i < height; i++)
+    {
+        RGBTRIPLE reversed_width[width];
+
+        for (int j = 0; j < width; j++)
+        {
+            reversed_width[width - j]
+        }
+    }
 }
 
 // Blur image

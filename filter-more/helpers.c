@@ -29,7 +29,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         {
             reversed_width[width - 1 - j] = image[i][j];
         }
-        image[i]
+        image[i] = 
     }
 }
 

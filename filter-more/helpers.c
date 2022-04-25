@@ -173,8 +173,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             // Compute Gx and Gy for RGB channels
             // middle-pixel
-            int gx = 0;
-            int gy = 0;
+            int gx_red = 0;
+            int gx_green = 0;
+            int gx_blue = 0;
+            int gy_red = 0;
+            int gy_green = 0;
+            int gy_blue = 0;
             // top-left
             if (top_left[0] >= 0 && top_left[1] >= 0)
             {

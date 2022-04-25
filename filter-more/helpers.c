@@ -173,88 +173,92 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             // Compute Gx and Gy for RGB channels
             // middle-pixel
-            int gx_red = 0;
-            int gx_green = 0;
-            int gx_blue = 0;
+            double gx_red = 0.0;
+            double gx_green = 0.0;
+            double gx_blue = 0.0;
 
-            int gy_red = 0;
-            int gy_green = 0;
-            int gy_blue = 0;
+            double gy_red = 0.0;
+            double gy_green = 0.0;
+            double gy_blue = 0.0;
             // top-left
             if (top_left[0] >= 0 && top_left[1] >= 0)
             {
-                gx_red += -1 * image_copy[top_left[0]][top_left[1]].rgbtRed;
-                gx_green += -1 * image_copy[top_left[0]][top_left[1]].rgbtGreen;
-                gx_blue += -1 * image_copy[top_left[0]][top_left[1]].rgbtBlue;
+                gx_red += -1.0 * image_copy[top_left[0]][top_left[1]].rgbtRed;
+                gx_green += -1.0 * image_copy[top_left[0]][top_left[1]].rgbtGreen;
+                gx_blue += -1.0 * image_copy[top_left[0]][top_left[1]].rgbtBlue;
 
-                gy_red += -1 * image_copy[top_left[0]][top_left[1]].rgbtRed;
-                gy_green += -1 * image_copy[top_left[0]][top_left[1]].rgbtGreen;
-                gy_blue += -1 * image_copy[top_left[0]][top_left[1]].rgbtBlue;
+                gy_red += -1.0 * image_copy[top_left[0]][top_left[1]].rgbtRed;
+                gy_green += -1.0 * image_copy[top_left[0]][top_left[1]].rgbtGreen;
+                gy_blue += -1.0 * image_copy[top_left[0]][top_left[1]].rgbtBlue;
             }
             // top-middle
             if (top_middle[0] >= 0)
             {
-                gy_red += -2 * image_copy[top_middle[0]][top_middle[1]].rgbtRed;
-                gy_green += -2 * image_copy[top_middle[0]][top_middle[1]].rgbtGreen;
-                gy_blue += -2 * image_copy[top_middle[0]][top_middle[1]].rgbtBlue;
+                gy_red += -2.0 * image_copy[top_middle[0]][top_middle[1]].rgbtRed;
+                gy_green += -2.0 * image_copy[top_middle[0]][top_middle[1]].rgbtGreen;
+                gy_blue += -2.0 * image_copy[top_middle[0]][top_middle[1]].rgbtBlue;
             }
             // top-right
             if (top_right[0] >= 0 && top_right[1] < width)
             {
-                gx_red += 1 * image_copy[top_right[0]][top_right[1]].rgbtRed;
-                gx_green += 1 * image_copy[top_right[0]][top_right[1]].rgbtGreen;
-                gx_blue += 1 * image_copy[top_right[0]][top_right[1]].rgbtBlue;
+                gx_red += 1.0 * image_copy[top_right[0]][top_right[1]].rgbtRed;
+                gx_green += 1.0 * image_copy[top_right[0]][top_right[1]].rgbtGreen;
+                gx_blue += 1.0 * image_copy[top_right[0]][top_right[1]].rgbtBlue;
 
-                gy_red += -1 * image_copy[top_right[0]][top_right[1]].rgbtRed;
-                gy_green += -1 * image_copy[top_right[0]][top_right[1]].rgbtGreen;
-                gy_blue += -1 * image_copy[top_right[0]][top_right[1]].rgbtBlue;
+                gy_red += -1.0 * image_copy[top_right[0]][top_right[1]].rgbtRed;
+                gy_green += -1.0 * image_copy[top_right[0]][top_right[1]].rgbtGreen;
+                gy_blue += -1.0 * image_copy[top_right[0]][top_right[1]].rgbtBlue;
             }
             // middle-left
             if (middle_left[1] >= 0)
             {
-                gx_red += -2 * image_copy[middle_left[0]][middle_left[1]].rgbtRed;
-                gx_green += -2 * image_copy[middle_left[0]][middle_left[1]].rgbtGreen;
-                gx_blue += -2 * image_copy[middle_left[0]][middle_left[1]].rgbtBlue;
+                gx_red += -2.0 * image_copy[middle_left[0]][middle_left[1]].rgbtRed;
+                gx_green += -2.0 * image_copy[middle_left[0]][middle_left[1]].rgbtGreen;
+                gx_blue += -2.0 * image_copy[middle_left[0]][middle_left[1]].rgbtBlue;
             }
             // middle-right
             if (middle_right[1] < width)
             {
-                gx_red += 2 * image_copy[middle_right[0]][middle_right[1]].rgbtRed;
-                gx_green += 2 * image_copy[middle_right[0]][middle_right[1]].rgbtGreen;
-                gx_blue += 2 * image_copy[middle_right[0]][middle_right[1]].rgbtBlue;
+                gx_red += 2.0 * image_copy[middle_right[0]][middle_right[1]].rgbtRed;
+                gx_green += 2.0 * image_copy[middle_right[0]][middle_right[1]].rgbtGreen;
+                gx_blue += 2.0 * image_copy[middle_right[0]][middle_right[1]].rgbtBlue;
             }
             // bottom-left
             if (bottom_left[0] < height && bottom_left[1] >= 0)
             {
-                gx_red += -1 * image_copy[bottom_left[0]][bottom_left[1]].rgbtRed;
-                gx_green += -1 * image_copy[bottom_left[0]][bottom_left[1]].rgbtGreen;
-                gx_blue += -1 * image_copy[bottom_left[0]][bottom_left[1]].rgbtBlue;
+                gx_red += -1.0 * image_copy[bottom_left[0]][bottom_left[1]].rgbtRed;
+                gx_green += -1.0 * image_copy[bottom_left[0]][bottom_left[1]].rgbtGreen;
+                gx_blue += -1.0 * image_copy[bottom_left[0]][bottom_left[1]].rgbtBlue;
 
-                gy_red += 1 * image_copy[bottom_left[0]][bottom_left[1]].rgbtRed;
-                gy_green += 1 * image_copy[bottom_left[0]][bottom_left[1]].rgbtGreen;
-                gy_blue += 1 * image_copy[bottom_left[0]][bottom_left[1]].rgbtBlue;
+                gy_red += 1.0 * image_copy[bottom_left[0]][bottom_left[1]].rgbtRed;
+                gy_green += 1.0 * image_copy[bottom_left[0]][bottom_left[1]].rgbtGreen;
+                gy_blue += 1.0 * image_copy[bottom_left[0]][bottom_left[1]].rgbtBlue;
             }
             // bottom-middle
             if (bottom_middle[0] < height)
             {
-                gy_red += 2 * image_copy[bottom_middle[0]][bottom_middle[1]].rgbtRed;
-                gy_green += 2 * image_copy[bottom_middle[0]][bottom_middle[1]].rgbtGreen;
-                gy_blue += 2 * image_copy[bottom_middle[0]][bottom_middle[1]].rgbtBlue;
+                gy_red += 2.0 * image_copy[bottom_middle[0]][bottom_middle[1]].rgbtRed;
+                gy_green += 2.0 * image_copy[bottom_middle[0]][bottom_middle[1]].rgbtGreen;
+                gy_blue += 2.0 * image_copy[bottom_middle[0]][bottom_middle[1]].rgbtBlue;
             }
             // bottom-right
             if (bottom_right[0] < height && bottom_right[1] < width)
             {
-                gx_red += 1 * image_copy[bottom_right[0]][bottom_right[1]].rgbtRed;
-                gx_green += 1 * image_copy[bottom_right[0]][bottom_right[1]].rgbtGreen;
-                gx_blue += 1 * image_copy[bottom_right[0]][bottom_right[1]].rgbtBlue;
+                gx_red += 1.0 * image_copy[bottom_right[0]][bottom_right[1]].rgbtRed;
+                gx_green += 1.0 * image_copy[bottom_right[0]][bottom_right[1]].rgbtGreen;
+                gx_blue += 1.0 * image_copy[bottom_right[0]][bottom_right[1]].rgbtBlue;
 
-                gy_red += 1 * image_copy[bottom_right[0]][bottom_right[1]].rgbtRed;
-                gy_green += 1 * image_copy[bottom_right[0]][bottom_right[1]].rgbtGreen;
-                gy_blue += 1 * image_copy[bottom_right[0]][bottom_right[1]].rgbtBlue;
+                gy_red += 1.0 * image_copy[bottom_right[0]][bottom_right[1]].rgbtRed;
+                gy_green += 1.0 * image_copy[bottom_right[0]][bottom_right[1]].rgbtGreen;
+                gy_blue += 1.0 * image_copy[bottom_right[0]][bottom_right[1]].rgbtBlue;
             }
-            double sobel_red = round(sqrt(pow(gx_red, 2) + pow(gy_red, 2));
-            double sobel_green = sqrt(pow(gx_green, 2) + pow(gy_green, 2));
-            double sobel_blue = sqrt(pow(gx_blue, 2) + pow(gy_blue, 2));
+            int sobel_red = round(sqrt(pow(gx_red, 2) + pow(gy_red, 2)));
+            int sobel_green = round(sqrt(pow(gx_green, 2) + pow(gy_green, 2)));
+            int sobel_blue = round(sqrt(pow(gx_blue, 2) + pow(gy_blue, 2)));
+
+            image[i][j].rgbtRed = sobel_red > 255 ? 255 : sobel_red;
+            image[i][j].rgbtGreen = sobel_green > 255 ? 255 : sobel_green;
+            image[i][j].rgbtBlue = sobel_blue > 255 ? 255 : sobel_blue;
         }
     }
 }

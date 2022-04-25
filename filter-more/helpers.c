@@ -252,10 +252,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 gy_green += 1.0 * image_copy[bottom_right[0]][bottom_right[1]].rgbtGreen;
                 gy_blue += 1.0 * image_copy[bottom_right[0]][bottom_right[1]].rgbtBlue;
             }
+            // Compute sqrt(Gx^2 + Gy^2)
             int sobel_red = round(sqrt(pow(gx_red, 2) + pow(gy_red, 2)));
             int sobel_green = round(sqrt(pow(gx_green, 2) + pow(gy_green, 2)));
             int sobel_blue = round(sqrt(pow(gx_blue, 2) + pow(gy_blue, 2)));
-
+            // Assign the value back to original pixel, cap at 255
             image[i][j].rgbtRed = sobel_red > 255 ? 255 : sobel_red;
             image[i][j].rgbtGreen = sobel_green > 255 ? 255 : sobel_green;
             image[i][j].rgbtBlue = sobel_blue > 255 ? 255 : sobel_blue;

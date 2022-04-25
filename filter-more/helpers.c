@@ -46,7 +46,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             // Initialize the indices of all pixels
         // within one row and column of the original pixel
-        int top-left = i
+        int top_left[][] = {i - 1, j - 1};
+        int middle_left[][] = {i, j - 1};
+        int bottom_left[][] = {i + 1; j -1};
+        int 
         }
     }
 }

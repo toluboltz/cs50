@@ -67,8 +67,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // Initialize sum for each color and pixel count
             // middle-pixel
             int sum_red = image_copy[i][j].rgbtRed;
-            int sum_blue = image_copy[i][j].rgbtGreen;
-            int sum_green = image_copy[i][j].rgbtBlue;
+            int sum_green = image_copy[i][j].rgbtGreen;
+            int sum_blue = image_copy[i][j].rgbtBlue;
             int pixel_count = 1;
             // top-left
             if (top_left[0] >= 0 && top_left[1] >= 0)

@@ -156,5 +156,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             image_copy[i][j] = image[i][j];
         }
     }
-    
+    // Edge detection
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            
+        }
+    }
 }

@@ -77,9 +77,11 @@ int main(int argc, char *argv[])
         }
     }
 
+    // Release allocated memory
     free(jpg);
     free(output_filename);
 
+    // Close filestreams
     fclose(raw_file);
     fclose(outfile);
 

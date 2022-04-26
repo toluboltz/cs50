@@ -19,4 +19,7 @@ int main(int argc, char *argv[])
         printf("Could not open %s.\n", filename);
         return 1;
     }
+
+    const int BLOCK_SIZE = 512;
+    
 }

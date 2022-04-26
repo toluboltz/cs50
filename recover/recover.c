@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 int main(int argc, char *argv[])
 {
@@ -21,6 +22,10 @@ int main(int argc, char *argv[])
     }
 
     const int BLOCK_SIZE = 512;
+
+    typedef uint8_t BYTE;
+
+    BYTE *jpg_buffer = malloc(sizeof(BYTE) * BLOCK_SIZE);
 
     
 }

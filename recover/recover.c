@@ -9,12 +9,14 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // Track file name
+    // Remember image filename
     char *filename = argv[1];
 
+    // Open image file
     FILE *file = fopen(filename, "r");
     if (file == NULL)
     {
-        
+        printf("Could not open %s.\n", filename);
+        return 1;
     }
 }

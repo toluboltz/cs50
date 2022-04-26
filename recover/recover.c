@@ -11,10 +11,10 @@ int main(int argc, char *argv[])
     }
 
     // Remember image filename
-    char *filename = argv[1];
+    char *infile = argv[1];
 
     // Open image file
-    FILE *raw_file = fopen(filename, "r");
+    FILE *raw_file = fopen(infile, "r");
     if (raw_file == NULL)
     {
         printf("Could not open %s.\n", filename);
@@ -27,20 +27,20 @@ int main(int argc, char *argv[])
 
     BYTE *jpg = malloc(sizeof(BYTE) * BLOCK_SIZE);
 
-    char *format = "###.jpg";
+    char *output_format = "###.jpg";
 
-    char *outfile = malloc(sizeof(BYTE) * strlen(out_format) + 1);
+    char *output_filename = malloc(sizeof(BYTE) * strlen(output_format) + 1);
 
-    sprintf(outfile, "%03i.jpg", 0);
+    sprintf(out_filename, "%03i.jpg", 0);
 
     fread(jpg, sizeof(BLOCK_SIZE), 1, raw_file);
 
-    FILE *out_file = fopen(out_buffer, "w");
-    if (out_file == NULL)
+    FILE *outfile = fopen(output_filename, "w");
+    if (outfile == NULL)
     {
         printf("Could not open %s.\n", filename);
         return 1;
     }
 
-    fwrite(jpg)
+    fwrite(jpg, sizeof(BLOCK_SIZE), 1)
 }

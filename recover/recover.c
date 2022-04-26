@@ -24,18 +24,20 @@ int main(int argc, char *argv[])
     }
 
     const int BLOCK_SIZE = 512;
+    
     typedef uint8_t BYTE;
 
     char *output_format = "###.jpg";
 
     BYTE *jpg = malloc(sizeof(BYTE) * BLOCK_SIZE);
-    char *output_filename = malloc(sizeof(BYTE) * strlen(output_format) + 1);
 
-    int file_count = 0;
+    char *output_filename = malloc(sizeof(BYTE) * strlen(output_format) + 1);
 
     FILE *outfile;
 
     bool write = false;
+
+    int file_count = 0;
 
     while (fread(jpg, sizeof(BYTE), BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {

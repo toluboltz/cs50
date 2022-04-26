@@ -22,13 +22,11 @@ int main(int argc, char *argv[])
     }
 
     const int BLOCK_SIZE = 512;
-
     typedef uint8_t BYTE;
-
-    BYTE *jpg = malloc(sizeof(BYTE) * BLOCK_SIZE);
 
     char *output_format = "###.jpg";
 
+    BYTE *jpg = malloc(sizeof(BYTE) * BLOCK_SIZE);
     char *output_filename = malloc(sizeof(BYTE) * strlen(output_format) + 1);
 
     int file_count = 0;
@@ -62,6 +60,7 @@ int main(int argc, char *argv[])
     }
 
     free(jpg);
+    free(output_filename);
 
     fclose(raw_file);
     fclose(outfile);

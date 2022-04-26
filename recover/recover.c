@@ -29,26 +29,31 @@ int main(int argc, char *argv[])
 
     char *output_format = "###.jpg";
 
-    char *output_filename = malloc(sizeof(BYTE) * strlen(output_format) + 1);
+    // char *output_filename = malloc(sizeof(BYTE) * strlen(output_format) + 1);
 
     int file_count = 0;
     while (fread(jpg, sizeof(BLOCK_SIZE), 1, raw_file) == BLOCK_SIZE)
     {
-        if (jpg[0] == 0xff && jpg[1] == 0xd8 && jpg[2] == 0xff && )
-        {
+        printf()
+        // if (jpg[0] == 0xff && jpg[1] == 0xd8 && jpg[2] == 0xff && )
+        // {
 
-        }
-        sprintf(out_filename, "%03i.jpg", file_count);
+        // }
+        // sprintf(out_filename, "%03i.jpg", file_count);
 
         file_count++;
+        if (file_count == 1)
+        {
+            break;
+        }
     }
 
-    FILE *outfile = fopen(output_filename, "w");
-    if (outfile == NULL)
-    {
-        printf("Could not open %s.\n", filename);
-        return 1;
-    }
+    // FILE *outfile = fopen(output_filename, "w");
+    // if (outfile == NULL)
+    // {
+    //     printf("Could not open %s.\n", filename);
+    //     return 1;
+    // }
 
-    fwrite(jpg, sizeof(BLOCK_SIZE), 1)
+    // fwrite(jpg, sizeof(BLOCK_SIZE), 1)
 }

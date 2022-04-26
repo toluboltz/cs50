@@ -34,6 +34,10 @@ int main(int argc, char *argv[])
     int file_count = 0;
     while (fread(jpg, sizeof(BLOCK_SIZE), 1, raw_file) == BLOCK_SIZE)
     {
+        if ()
+        {
+            
+        }
         sprintf(out_filename, "%03i.jpg", file_count);
 
         file_count++;

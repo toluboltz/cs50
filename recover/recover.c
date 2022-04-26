@@ -6,6 +6,7 @@
 
 int main(int argc, char *argv[])
 {
+    // Ensure proper command-line usage
     if (argc != 2)
     {
         printf("Usage: ./recover IMAGE\n");

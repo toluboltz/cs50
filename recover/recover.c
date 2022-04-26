@@ -31,9 +31,13 @@ int main(int argc, char *argv[])
 
     char *output_filename = malloc(sizeof(BYTE) * strlen(output_format) + 1);
 
-    sprintf(out_filename, "%03i.jpg", 0);
+    int file_count = 0;
+    while (fread(jpg, sizeof(BLOCK_SIZE), 1, raw_file) == BLOCK_SIZE)
+    {
+        sprintf(out_filename, "%03i.jpg", file_count);
 
-    fread(jpg, sizeof(BLOCK_SIZE), 1, raw_file);
+        file_count++;
+    }
 
     FILE *outfile = fopen(output_filename, "w");
     if (outfile == NULL)

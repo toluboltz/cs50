@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     char *output_filename = malloc(sizeof(BYTE) * strlen(output_format) + 1);
 
     int file_count = 0;
-    printf("here\n");
+
     while (fread(jpg, sizeof(BYTE), BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
         FILE *outfile;

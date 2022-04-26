@@ -56,6 +56,11 @@ int main(int argc, char *argv[])
             file_count++;
         }
 
+        if (file_count == 5)
+        {
+            break;
+        }
+
         fwrite(jpg, sizeof(BYTE), BLOCK_SIZE, outfile);
 
     }

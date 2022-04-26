@@ -27,5 +27,9 @@ int main(int argc, char *argv[])
 
     BYTE *jpg_buffer = malloc(sizeof(BYTE) * BLOCK_SIZE);
 
-    
+    char *out_format = "###.jpg";
+
+    char *out_buffer = malloc(sizeof(BYTE) * strlen(out_format) + 1);
+
+    sprintf(out_buffer, "%03i.jpg", 0);
 }

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+
 int main(int argc, char *argv[])
 {
     if (argc != 2)
@@ -31,10 +32,10 @@ int main(int argc, char *argv[])
 
     int file_count = 0;
 
+    FILE *outfile;
+
     while (fread(jpg, sizeof(BYTE), BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
-        FILE *outfile;
-
         // Check for JPEG file format
         if (jpg[0] == 0xff && jpg[1] == 0xd8 && jpg[2] == 0xff && ((jpg[3] & 0xf0) == 0xe0))
         {

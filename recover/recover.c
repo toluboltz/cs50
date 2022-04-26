@@ -23,20 +23,28 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    // Store the block size
     const int BLOCK_SIZE = 512;
-    
+
+    // Define a byte data type
     typedef uint8_t BYTE;
 
+    // Define output format
     char *output_format = "###.jpg";
 
+    // Allocate memory for JPEG buffer
     BYTE *jpg = malloc(sizeof(BYTE) * BLOCK_SIZE);
 
+    // Allocate memory for output filename buffer (used in sprintf)
     char *output_filename = malloc(sizeof(BYTE) * strlen(output_format) + 1);
 
+    // File object
     FILE *outfile;
 
+    // Variable to keep track of first JPEG image
     bool write = false;
 
+    // Variable to keep track of output file number
     int file_count = 0;
 
     while (fread(jpg, sizeof(BYTE), BLOCK_SIZE, raw_file) == BLOCK_SIZE)
@@ -54,10 +62,14 @@ int main(int argc, char *argv[])
                 printf("Could not open %s.\n", output_filename);
                 return 1;
             }
+            // Set write flag to true
             write = true;
+
+            // Increment file count variable
             file_count++;
         }
 
+        // Check if to write to output file
         if (write)
         {
             fwrite(jpg, sizeof(BYTE), BLOCK_SIZE, outfile);

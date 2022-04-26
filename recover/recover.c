@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
             fclose(outfile);
 
             // Create output file name
-            sprintf(out_filename, "%03i.jpg", file_count);
+            sprintf(output_filename, "%03i.jpg", file_count);
 
             // Open output file
             outfile = fopen(output_filename, "w");
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
                 printf("Could not open %s.\n", filename);
                 return 1;
             }
-            
+
             file_count++;
         }
 

@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     printf("here\n");
     while (fread(jpg, sizeof(BLOCK_SIZE), 1, raw_file) == BLOCK_SIZE)
     {
-        unsigned char fourth = jpg[3];
+        char fourth = jpg[3];
         printf("here\n");
         printf("%c\n", fourth);
         // if (jpg[0] == 0xff && jpg[1] == 0xd8 && jpg[2] == 0xff && )

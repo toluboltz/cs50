@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
     int file_count = 0;
     printf("here\n");
-    while (fread(jpg, sizeof(BLOCK_SIZE), 1, raw_file) == BLOCK_SIZE)
+    while (fread(jpg, BLOCK_SIZE, 1, raw_file) == BLOCK_SIZE)
     {
         char fourth = jpg[3];
         printf("here\n");

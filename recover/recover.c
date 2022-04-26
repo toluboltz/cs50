@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
             file_count++;
         }
 
-        fwrite(jpg, )
+        fwrite(jpg, sizeof(BYTE), BLOCK_SIZE, )
 
     }
 

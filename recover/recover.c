@@ -37,8 +37,9 @@ int main(int argc, char *argv[])
     {
         for (int i = 0; i < 512; i++)
         {
-            printf("%hhu\n", jpg[i]);
+            printf("%hhu ", jpg[i]);
         }
+        printf("\n");
         // if (jpg[0] == 0xff && jpg[1] == 0xd8 && jpg[2] == 0xff && )
         // {
 
@@ -46,7 +47,7 @@ int main(int argc, char *argv[])
         // sprintf(out_filename, "%03i.jpg", file_count);
 
         file_count++;
-        if (file_count == 1)
+        if (file_count == 5)
         {
             break;
         }

@@ -40,20 +40,8 @@ int main(int argc, char *argv[])
         // Check for JPEG file format
         if (jpg[0] == 0xff && jpg[1] == 0xd8 && jpg[2] == 0xff && ((jpg[3] & 0xf0) == 0xe0))
         {
-            // Check if file is open
-            outfile = fopen(output_filename, "w");
-            if (outfile != NULL)
-            {
-                fclose(outfile);
-            }
-
-
-
-
-
-
-
-
+            // Close previous output file
+            fclose(outfile);
 
             // Create output file name
             sprintf(out_filename, "%03i.jpg", file_count);
@@ -65,20 +53,11 @@ int main(int argc, char *argv[])
                 printf("Could not open %s.\n", filename);
                 return 1;
             }
-
-
+            file_count++;
         }
-        // if (jpg[0] == 0xff && jpg[1] == 0xd8 && jpg[2] == 0xff && )
-        // {
 
-        // }
+        
 
-
-        file_count++;
-        if (file_count == 5)
-        {
-            break;
-        }
     }
 
 

@@ -14,8 +14,8 @@ int main(int argc, char *argv[])
     char *filename = argv[1];
 
     // Open image file
-    FILE *file = fopen(filename, "r");
-    if (file == NULL)
+    FILE *raw_file = fopen(filename, "r");
+    if (raw_file == NULL)
     {
         printf("Could not open %s.\n", filename);
         return 1;
@@ -25,11 +25,22 @@ int main(int argc, char *argv[])
 
     typedef uint8_t BYTE;
 
-    BYTE *jpg_buffer = malloc(sizeof(BYTE) * BLOCK_SIZE);
+    BYTE *jpg = malloc(sizeof(BYTE) * BLOCK_SIZE);
 
-    char *out_format = "###.jpg";
+    char *format = "###.jpg";
 
-    char *out_buffer = malloc(sizeof(BYTE) * strlen(out_format) + 1);
+    char *outfile = malloc(sizeof(BYTE) * strlen(out_format) + 1);
 
-    sprintf(out_buffer, "%03i.jpg", 0);
+    sprintf(outfile, "%03i.jpg", 0);
+
+    fread(jpg, sizeof(BLOCK_SIZE), 1, raw_file);
+
+    FILE *out_file = fopen(out_buffer, "w");
+    if (out_file == NULL)
+    {
+        printf("Could not open %s.\n", filename);
+        return 1;
+    }
+
+    fwrite(jpg)
 }

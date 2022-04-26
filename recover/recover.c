@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-
+#include <string.h>
 
 int main(int argc, char *argv[])
 {
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
             outfile = fopen(output_filename, "w");
             if (outfile == NULL)
             {
-                printf("Could not open %s.\n", filename);
+                printf("Could not open %s.\n", output_filename);
                 return 1;
             }
 

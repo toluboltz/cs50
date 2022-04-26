@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
         {
             printf("%hhu ", jpg[i]);
         }
-        printf("\n");
+        printf("\n\n");
         // if (jpg[0] == 0xff && jpg[1] == 0xd8 && jpg[2] == 0xff && )
         // {
 

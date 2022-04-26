@@ -35,9 +35,20 @@ int main(int argc, char *argv[])
     printf("here\n");
     while (fread(jpg, sizeof(BYTE), BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
+        // Check for JPEG file format
         if (jpg[0] == 0xff && jpg[1] == 0xd8 && jpg[2] == 0xff && ((jpg[3] & 0xf0) == 0xe0))
         {
+            // Create output file name
             sprintf(out_filename, "%03i.jpg", file_count);
+
+            // Open output file
+            FILE *outfile = fopen(output_filename, "w");
+            if (outfile == NULL)
+            {
+                printf("Could not open %s.\n", filename);
+                return 1;
+            }
+
             
         }
         // if (jpg[0] == 0xff && jpg[1] == 0xd8 && jpg[2] == 0xff && )
@@ -53,12 +64,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    // FILE *outfile = fopen(output_filename, "w");
-    // if (outfile == NULL)
-    // {
-    //     printf("Could not open %s.\n", filename);
-    //     return 1;
-    // }
+
 
     // fwrite(jpg, sizeof(BLOCK_SIZE), 1)
 

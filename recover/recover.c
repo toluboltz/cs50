@@ -53,6 +53,7 @@ int main(int argc, char *argv[])
                 printf("Could not open %s.\n", filename);
                 return 1;
             }
+            
             file_count++;
         }
 
@@ -60,13 +61,10 @@ int main(int argc, char *argv[])
 
     }
 
-
-
-    // fwrite(jpg, sizeof(BLOCK_SIZE), 1)
-
     free(jpg);
 
     fclose(raw_file);
+    fclose(outfile);
 
     return 0;
 }

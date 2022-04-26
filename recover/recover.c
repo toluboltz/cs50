@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
+#include <stdbool.h>
 
 int main(int argc, char *argv[])
 {
@@ -34,6 +35,8 @@ int main(int argc, char *argv[])
 
     FILE *outfile;
 
+    bool write = false;
+
     while (fread(jpg, sizeof(BYTE), BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
         // Check for JPEG file format
@@ -52,17 +55,14 @@ int main(int argc, char *argv[])
                 printf("Could not open %s.\n", output_filename);
                 return 1;
             }
-
+            write = true;
             file_count++;
         }
 
-        if (file_count == 5)
+        if (write)
         {
-            break;
+            fwrite(jpg, sizeof(BYTE), BLOCK_SIZE, outfile);
         }
-
-        fwrite(jpg, sizeof(BYTE), BLOCK_SIZE, outfile);
-
     }
 
     free(jpg);

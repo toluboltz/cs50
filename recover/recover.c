@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     FILE *raw_file = fopen(infile, "r");
     if (raw_file == NULL)
     {
-        printf("Could not open %s.\n", filename);
+        printf("Could not open %s.\n", infile);
         return 1;
     }
 
@@ -34,7 +34,8 @@ int main(int argc, char *argv[])
     int file_count = 0;
     while (fread(jpg, sizeof(BLOCK_SIZE), 1, raw_file) == BLOCK_SIZE)
     {
-        printf()
+        unsigned char fourth = jpg[3];
+        printf("%c\n", fourth);
         // if (jpg[0] == 0xff && jpg[1] == 0xd8 && jpg[2] == 0xff && )
         // {
 
@@ -56,4 +57,10 @@ int main(int argc, char *argv[])
     // }
 
     // fwrite(jpg, sizeof(BLOCK_SIZE), 1)
+
+    free(jpg);
+
+    fclose(raw_file);
+
+    return 0;
 }

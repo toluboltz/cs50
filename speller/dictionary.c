@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 #include "dictionary.h"
 
@@ -53,6 +54,8 @@ bool load(const char *dictionary)
     {
         return false;
     }
+    char word[LENGTH];
+    int index = 0;
     char c;
     while (fread(&c, sizeof(char), 1, dict))
     {

@@ -5,23 +5,24 @@
 
 #include "dictionary.h"
 
-// // Represents a node in a hash table
-// typedef struct node
-// {
-//     char word[LENGTH + 1];
-//     struct node *next;
-// }
-// node;
+// Represents a node in a hash table
+typedef struct node
+{
+    char word[LENGTH + 1];
+    struct node *next;
+}
+node;
+
+// TODO: Choose number of buckets in hash table
+const unsigned int N = 26;
 
 // Represet a node in a hash table
 typedef struct trie
 {
     char word[LENGTH + 1];
-    struct trie *letter[27]
+    struct trie *letter[N + 1];
 }
-
-// TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
+trie;
 
 // Hash table
 node *table[N];

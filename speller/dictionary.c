@@ -72,7 +72,53 @@ bool load(const char *dictionary)
     }
     initialize(root);
 
+    // Open dictionary file
     FILE *file = fopen(dictionary, "r");
+    if (file == NULL)
+    {
+        printf("Could not open %s.\n", dictionary);
+        return false;
+    }
+
+    // Set pointer to traverse the trie tree starting at root
+    trie *trav = root;
+
+    char c;
+    while (fread(&c, sizeof(c), 1, file))
+    {
+        if (c != '\n')
+        {
+            int key = hash(&c);
+
+            if (trav->next_letter[key] == NULL)
+            {
+                // Allocate temporary memory for new trie
+                trie *temp = malloc(sizeof(trie));
+                if (temp == NULL)
+                {
+                    return false;
+                }
+                initialize(trie);
+
+                // Set and point to new trie
+                trav->next_letter[key] = n;
+                trav = n;
+            }
+            else
+            {
+                // Move down the tree to next trie
+                trav = trav->next_letter[key];
+            }
+        }
+        else
+        {
+            // Word inserted, go back to root node
+            trav->is_word = true;
+            trav = root;
+        }
+    }
+
+    // Close 
 
     return false;
 }

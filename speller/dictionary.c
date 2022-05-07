@@ -59,6 +59,7 @@ bool check(const char *word)
         }
         else
         {
+            // Word doesn't exist
             return false;
         }
     }

@@ -159,16 +159,16 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    trie *trav = root;
-    free_dictionary(trav);
+    free_dictionary(root);
     return true;
 }
 
-void free_dictionary(trie *n)
+void free_dictionary(trie *trav)
 {
     // Loop through the arrays of each node
     for (int i = 0; i < N; i++)
     {
+        
         // Check if array points to another node
         if (n->next_letter[i] != NULL)
         {

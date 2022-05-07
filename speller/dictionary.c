@@ -174,8 +174,8 @@ void free_dictionary(trie *n)
         {
             free_dictionary(n->next_letter[i]);
         }
-
-        // Free last node in chain
-        free(n);
     }
+
+    // Free last node in chain
+    free(n);
 }

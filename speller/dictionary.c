@@ -57,6 +57,10 @@ bool check(const char *word)
         {
             cursor = cursor->next_letter[key];
         }
+        else
+        {
+            return false;
+        }
     }
 
     // Return the value of the last node

@@ -176,6 +176,6 @@ void free_dictionary(trie *trav)
         }
     }
 
-    // Free last node in chain
-    free(n);
+    // Free node
+    free(trav);
 }

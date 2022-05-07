@@ -27,6 +27,8 @@ typedef struct trie
 }
 trie;
 
+void initialize_trie(trie *n);
+
 // // Hash table
 // node *table[N];
 
@@ -98,11 +100,11 @@ bool load(const char *dictionary)
                 {
                     return false;
                 }
-                initialize(trie);
+                initialize(temp);
 
                 // Set and point to new trie
-                trav->next_letter[key] = n;
-                trav = n;
+                trav->next_letter[key] = temp;
+                trav = temp;
             }
             else
             {
@@ -118,9 +120,10 @@ bool load(const char *dictionary)
         }
     }
 
-    // Close 
+    // Close file
+    fclose(file);
 
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded

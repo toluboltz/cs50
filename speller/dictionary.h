@@ -12,7 +12,6 @@
 // Prototypes
 bool check(const char *word);
 unsigned int hash(const char *word);
-void initialize_trie(trie *n);
 bool load(const char *dictionary);
 unsigned int size(void);
 bool unload(void);

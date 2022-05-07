@@ -171,9 +171,7 @@ void free_dictionary(trie *trav)
         // Check if array points to another node
         if (trav->next_letter[i] != NULL)
         {
-            // Set traversal pointer to next node
-            trav = trav->next_letter[i];
-            free_dictionary(trav);
+            free_dictionary(trav->next_letter[i]);
         }
 
         // Free last node in chain

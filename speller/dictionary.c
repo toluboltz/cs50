@@ -44,7 +44,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    if (word == "'")
+    if (strcmp(word, "'") == 0)
     {
         return 26;
     }

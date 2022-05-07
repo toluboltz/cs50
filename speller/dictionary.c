@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "dictionary.h"
 
@@ -72,6 +73,8 @@ bool load(const char *dictionary)
         else
         {
             word[index] = '\0';
+
+            trie *n = malloc(sizeof(trie));
 
             for (int i = 0; i < strlen(word); i++)
             {

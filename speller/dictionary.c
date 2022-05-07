@@ -91,6 +91,7 @@ bool load(const char *dictionary)
     root = malloc(sizeof(trie));
     if (root == NULL)
     {
+        free(root);
         return false;
     }
     initialize_trie(root);

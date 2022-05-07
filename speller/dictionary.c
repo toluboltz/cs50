@@ -91,7 +91,6 @@ bool load(const char *dictionary)
     root = malloc(sizeof(trie));
     if (root == NULL)
     {
-        free(root);
         return false;
     }
     initialize_trie(root);
@@ -120,7 +119,6 @@ bool load(const char *dictionary)
                 trie *temp = malloc(sizeof(trie));
                 if (temp == NULL)
                 {
-                    free(temp);
                     return false;
                 }
                 initialize_trie(temp);

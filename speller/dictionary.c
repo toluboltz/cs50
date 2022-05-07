@@ -171,6 +171,7 @@ bool free_dictionary(trie *n)
 
     for (int i = 0; i < N; i++)
     {
-        free_dictionary()
+        trav = trav->next_letter[i];
+        free_dictionary(trav)
     }
 }

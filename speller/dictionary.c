@@ -16,18 +16,11 @@
 // }
 // node;
 
-// TODO: Choose number of buckets in hash table
-const unsigned int N = 27;
 
-// Represet a trie
-typedef struct trie
-{
-    bool is_word;
-    struct trie *next_letter[N];
-}
-trie;
 
-void initialize_trie(trie *n);
+
+
+
 
 // // Hash table
 // node *table[N];
@@ -72,7 +65,7 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    initialize(root);
+    initialize_trie(root);
 
     // Open dictionary file
     FILE *file = fopen(dictionary, "r");

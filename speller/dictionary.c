@@ -46,9 +46,10 @@ bool check(const char *word)
     // Pointer to traverse the trie tree
     trie *cursor = root;
 
+    // Follow the links in the trie tree
     for (int i = 0; i < len; i++)
     {
-        char c = text[i];
+        char c = word[i];
         int key = hash(&c);
 
         if (cursor->next_letter[key] != NULL)
@@ -56,7 +57,9 @@ bool check(const char *word)
             cursor = cursor->next_letter[key];
         }
     }
-    return false;
+
+    // Return the value of the last node
+    return cursor->is_word;
 }
 
 // Hashes word to a number

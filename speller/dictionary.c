@@ -168,11 +168,11 @@ void free_dictionary(trie *trav)
     // Loop through the arrays of each node
     for (int i = 0; i < N; i++)
     {
-        
+
         // Check if array points to another node
-        if (n->next_letter[i] != NULL)
+        if (trav->next_letter[i] != NULL)
         {
-            free_dictionary(n->next_letter[i]);
+            free_dictionary(trav->next_letter[i]);
         }
     }
 

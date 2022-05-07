@@ -8,27 +8,27 @@
 
 #include "dictionary.h"
 
-// Represents a node in a hash table
-typedef struct node
-{
-    char word[LENGTH + 1];
-    struct node *next;
-}
-node;
+// // Represents a node in a hash table
+// typedef struct node
+// {
+//     char word[LENGTH + 1];
+//     struct node *next;
+// }
+// node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
+const unsigned int N = 27;
 
 // Represet a trie
 typedef struct trie
 {
     bool is_word;
-    struct trie *next_letter[N + 1];
+    struct trie *next_letter[N];
 }
 trie;
 
-// Hash table
-node *table[N];
+// // Hash table
+// node *table[N];
 
 // Trie root
 trie *root;

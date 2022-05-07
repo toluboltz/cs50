@@ -78,7 +78,7 @@ unsigned int hash(const char *word)
 void initialize_trie(trie *n)
 {
     n->is_word = false;
-    for (int i = 0; i < 27; i++)
+    for (int i = 0; i < N; i++)
     {
         n->next_letter[i] = NULL;
     }

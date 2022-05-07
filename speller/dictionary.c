@@ -68,8 +68,8 @@ bool load(const char *dictionary)
         {
             word[index] = '\0';
 
-            // Hash word
             
+
             index = 0;
         }
     }

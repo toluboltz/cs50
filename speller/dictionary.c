@@ -40,7 +40,22 @@ trie *root;
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
+    // Get length of word
+    int len = strlen(word);
+
+    // Pointer to traverse the trie tree
+    trie *cursor = root;
+
+    for (int i = 0; i < len; i++)
+    {
+        char c = text[i];
+        int key = hash(&c);
+
+        if (cursor->next_letter[key] != NULL)
+        {
+            cursor = cursor->next_letter[key];
+        }
+    }
     return false;
 }
 

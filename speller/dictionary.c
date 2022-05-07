@@ -59,7 +59,19 @@ bool load(const char *dictionary)
     char c;
     while (fread(&c, sizeof(char), 1, dict))
     {
-        
+        if (c != '\n')
+        {
+            word[index] = c;
+            index++;
+        }
+        else
+        {
+            word[index] = '\0';
+
+            // Hash word
+            
+            index = 0;
+        }
     }
     return false;
 }

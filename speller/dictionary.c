@@ -120,6 +120,7 @@ bool load(const char *dictionary)
                 trie *temp = malloc(sizeof(trie));
                 if (temp == NULL)
                 {
+                    free(temp);
                     return false;
                 }
                 initialize_trie(temp);

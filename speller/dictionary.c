@@ -60,6 +60,10 @@ bool load(const char *dictionary)
     {
         return false;
     }
+
+    // Traversal pointer
+    trie *trav = root;
+    
     char word[LENGTH];
     int index = 0;
     char c;

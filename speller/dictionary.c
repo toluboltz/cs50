@@ -64,14 +64,16 @@ void initialize_trie(trie *n)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    // TODO
+    // Allocate space for the root node
     root = malloc(sizeof(trie));
     if (root == NULL)
     {
         return false;
     }
     initialize(root);
-    
+
+    FILE *file = fopen(dictionary, "r");
+
     return false;
 }
 

@@ -65,39 +65,13 @@ void initialize_trie(trie *n)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *dict = fopen(dictionary, 'r');
-    if (dict == NULL)
+    root = malloc(sizeof(trie));
+    if (root == NULL)
     {
         return false;
     }
-
-    // Traversal pointer
-    trie *trav = root;
-
-    char word[LENGTH];
-    int index = 0;
-    char c;
-    while (fread(&c, sizeof(char), 1, dict))
-    {
-        if (c != '\n')
-        {
-            word[index] = c;
-            index++;
-        }
-        else
-        {
-            word[index] = '\0';
-
-            trie *n = malloc(sizeof(trie));
-
-            for (int i = 0; i < strlen(word); i++)
-            {
-                hash(word[i]);
-            }
-
-            index = 0;
-        }
-    }
+    initialize(root);
+    
     return false;
 }
 

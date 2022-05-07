@@ -158,11 +158,19 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    trie trav = root;
+    trie *trav = root;
+    return free_dictionary(trav);
+}
+
+bool free_dictionary(trie *n)
+{
+    if (trav->next_letter == NULL)
+    {
+        free(trav);
+    }
 
     for (int i = 0; i < N; i++)
     {
-        
+        free_dictionary()
     }
-    return false;
 }

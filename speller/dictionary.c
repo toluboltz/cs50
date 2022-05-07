@@ -161,6 +161,7 @@ bool unload(void)
 {
     trie *trav = root;
     free_dictionary(trav);
+    free(root);
     return true;
 }
 

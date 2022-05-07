@@ -28,6 +28,7 @@ typedef struct trie
 trie;
 
 void initialize_trie(trie *n);
+void free_dictionary(trie *trav);
 
 int word_count = 0;
 
@@ -158,20 +159,24 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    trie *trav = root;
-    return free_dictionary(trav);
+    free_dictionary(root);
+    return true;
 }
 
-bool free_dictionary(trie *n)
+void free_dictionary(trie *trav)
 {
-    if (trav->next_letter == NULL)
-    {
-        free(trav);
-    }
-
+    // Loop through the arrays of each node
     for (int i = 0; i < N; i++)
     {
-        trav = trav->next_letter[i];
-        free_dictionary(trav)
+        // Check if array points to another node
+        if (trav->next_letter[i] != NULL)
+        {
+            // Set traversal pointer to next node
+            trav = trav->next_letter[i];
+            free_dictionary(trav);
+        }
+
+        // Free last node in chain
+        free_dictionary(trav);
     }
 }

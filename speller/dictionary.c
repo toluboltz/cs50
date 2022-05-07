@@ -29,6 +29,8 @@ trie;
 
 void initialize_trie(trie *n);
 
+int word_count = 0;
+
 // // Hash table
 // node *table[N];
 
@@ -117,6 +119,9 @@ bool load(const char *dictionary)
             // Word inserted, go back to root node
             trav->is_word = true;
             trav = root;
+
+            // Increment word count
+            word_count++;
         }
     }
 
@@ -129,8 +134,7 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
-    return 0;
+    return word_count;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false

@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -42,6 +43,10 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
+    if (word == "'")
+    {
+        return 26;
+    }
     return toupper(word[0]) - 'A';
 }
 
@@ -68,7 +73,10 @@ bool load(const char *dictionary)
         {
             word[index] = '\0';
 
-            
+            for (int i = 0; i < strlen(word); i++)
+            {
+                hash(word[i]);
+            }
 
             index = 0;
         }

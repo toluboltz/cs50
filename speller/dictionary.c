@@ -19,11 +19,11 @@ node;
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
 
-// Represet a node in a hash table
+// Represet a trie
 typedef struct trie
 {
-    char word[LENGTH + 1];
-    struct trie *letter[N + 1];
+    bool is_word;
+    struct trie *next_letter[N + 1];
 }
 trie;
 
@@ -63,7 +63,7 @@ bool load(const char *dictionary)
 
     // Traversal pointer
     trie *trav = root;
-    
+
     char word[LENGTH];
     int index = 0;
     char c;

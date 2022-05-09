@@ -5,18 +5,22 @@ from cs50 import get_string
 
 def main():
 
-    # Get card number as a string and reverse it
-    card_number = get_string("Number: ")[::-1]
+    # Get card number as a string
+    card_number = get_string("Number: ")
 
-    sum = check_sum(card_number)
+    # Compute the checksum on the reversed card number
+    sum = check_sum(card_number[::-1])
 
     card_type = verify(sum, card_number)
 
 
 def check_sum(card_number):
     """Compute and return a checksum on the card number."""
-    for i in range(0, len(card_number), 2):
-        
+
+    # Multiply every other digit by 2 starting with the second-to-last digit
+    # and add those products' digits together
+    for i in range(1, len(card_number), 2):
+        int(card_number[i])
 
 
 def verify(sum, card_number):

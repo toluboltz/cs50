@@ -19,8 +19,10 @@ def check_sum(card_number):
 
     # Multiply every other digit by 2 starting with the second-to-last digit
     # and add those products' digits together
+    prod_digits = []
     for i in range(1, len(card_number), 2):
-        int(card_number[i]) * 2
+        prod_digits += [digit for digit in str(int(card_number[i]) * 2)]
+    print(prod_digits)
 
 
 def verify(sum, card_number):

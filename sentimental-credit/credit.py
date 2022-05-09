@@ -14,7 +14,9 @@ def main():
 
 
 def check_sum(card_number):
-    """
+    """Compute and return a checksum on the card number."""
+    for i in range(0, len(card_number), 2):
+        
 
 
 def verify(sum, card_number):

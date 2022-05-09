@@ -2,7 +2,7 @@
 
 def main():
     """Request user's name and print out hello, <name>."""
-    name = input("What is your name? ")
+    name = input("What is your name? \n")
     print(f"hello, {name}")
 
 

@@ -11,11 +11,12 @@ def main():
     # Compute the checksum on the reversed card number
     sum = check_sum(card_number[::-1])
 
+    
     card_type = verify(sum, card_number)
 
 
 def check_sum(card_number):
-    """Compute and return a checksum on the card number."""
+    """Compute checksum on the card number. Return chekcsum value"""
 
     # Multiply every other digit by 2 starting with the
     # second-to-last digit and store the digits
@@ -25,11 +26,11 @@ def check_sum(card_number):
 
     # Add the products' digits sum to the sum of the digits
     # that were not multiplied by 2
-    sum = sum(prod_digits)
+    digits_sum = sum(prod_digits)
     for i in range(0, len(card_number), 2):
-        sum += card_number[i]
+        digits_sum += int(card_number[i])
 
-    print(sum)
+    return digits_sum
 
 
 

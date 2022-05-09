@@ -6,7 +6,7 @@ from cs50 import get_int
 def main():
 
 
-def checksum(card_number):
+def check_sum(card_number):
 
 
 def verify()

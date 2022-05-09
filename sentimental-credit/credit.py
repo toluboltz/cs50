@@ -17,14 +17,21 @@ def main():
 def check_sum(card_number):
     """Compute and return a checksum on the card number."""
 
-    # Multiply every other digit by 2 starting with the second-to-last digit
-    # and store the digits
+    # Multiply every other digit by 2 starting with the
+    # second-to-last digit and store the digits
     prod_digits = []
     for i in range(1, len(card_number), 2):
-        prod_digits += [digit for digit in str(int(card_number[i]) * 2)]
+        prod_digits += [int(digit) for digit in str(int(card_number[i]) * 2)]
 
-    # Add the products' digits together
-    
+    # Add the products' digits sum to the sum of the digits
+    # that were not multiplied by 2
+    sum = sum(prod_digits)
+    for i in range(0, len(card_number), 2):
+        sum += card_number[i]
+
+    print(sum)
+
+
 
 
 def verify(sum, card_number):

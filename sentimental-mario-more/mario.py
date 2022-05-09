@@ -21,7 +21,7 @@ def pyramid(height, gap_length):
     """Print 2 half-pyramids separated by a gap."""
     for i in range(1, height + 1):
         # Print preceding spaces
-        print(" " * height - i, end="")
+        print(" " * (height - i), end="")
 
         # Print left #'s
         print("#" * i, end="")
@@ -31,6 +31,9 @@ def pyramid(height, gap_length):
 
         # Print right #'s
         print("#" * i, end="")
+
+        # Go to next row
+        print()
 
 
 if __name__ == "__main__":

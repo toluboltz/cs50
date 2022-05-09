@@ -63,7 +63,7 @@ def simulate_tournament(teams):
     teams = simulate_round(teams)
 
     while len(teams) > 1:
-        simulate_round(teams)
+        simulate_tournament(teams)
 
     return teams["name"]
 

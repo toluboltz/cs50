@@ -1,12 +1,12 @@
 # Program that determines whether a provided credit card number is valid according to Luhn’s algorithm
 
-from cs50 import get_int
+from cs50 import get_string
 
 
 def main():
 
-    # Get card number
-    card_number = get_string("Number: ")
+    # Get card number as a string and reverse it
+    card_number = get_string("Number: ")[::-1]
 
     sum = check_sum(card_number)
 
@@ -14,7 +14,7 @@ def main():
 
 
 def check_sum(card_number):
-    pass
+    """
 
 
 def verify(sum, card_number):

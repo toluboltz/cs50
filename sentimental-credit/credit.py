@@ -11,8 +11,11 @@ def main():
     # Compute the checksum on the reversed card number
     sum = check_sum(card_number[::-1])
 
-    
+    # Verify the card_type
     card_type = verify(sum, card_number)
+
+    # Print out card_type
+    print(card_type)
 
 
 def check_sum(card_number):
@@ -36,7 +39,11 @@ def check_sum(card_number):
 
 
 def verify(sum, card_number):
-    pass
+    """Verify the card type. Return if card type."""
+
+    # Check if checksum ends with 0
+    if sum % 10 == 0:
+        return "INVALID"
 
 
 if __name__ == "__main__":

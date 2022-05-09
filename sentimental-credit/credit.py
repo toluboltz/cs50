@@ -49,8 +49,14 @@ def verify(sum, card_number):
     mastercard = re.compile(r'[5][12345]')
     visa = re.compile(r'[4]')
 
-    if (visa.match(card_number)):
-        print("VISA")
+    if (amex.match(card_number)):
+        return "AMEX"
+    elif (mastercard.match(card_number)):
+        return "MASTERCARD"
+    elif (visa.match(card_number)):
+        return "VISA"
+    else:
+        return "INVALID"
 
 
 if __name__ == "__main__":

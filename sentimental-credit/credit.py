@@ -36,8 +36,6 @@ def check_sum(card_number):
     return digits_sum
 
 
-
-
 def verify(sum, card_number):
     """Verify the card type. Return if card type."""
 
@@ -45,11 +43,12 @@ def verify(sum, card_number):
     if sum % 10 != 0:
         return "INVALID"
 
-    # 
+    # Regular expression for each card type
     amex = re.compile(r'[3][47]')
     mastercard = re.compile(r'[5][12345]')
     visa = re.compile(r'[4]')
 
+    # Check for the card type
     if (amex.match(card_number)):
         return "AMEX"
     elif (mastercard.match(card_number)):

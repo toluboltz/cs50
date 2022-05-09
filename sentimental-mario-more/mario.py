@@ -11,5 +11,23 @@ def main():
         if height >= 1 and height <= 8:
             break
 
+    # Length of space between half-pyramids
+    gap_length = 2
+
+    pyramid(height, gap_length)
+
+
+def pyramid(height, gap_length):
+    """Print 2 half-pyramids of a sp separated by a gap
     for i in range(1, height + 1):
-        
+        # Print preceding spaces
+        print(" " * height - i, end="")
+
+        # Print left #'s
+        print("#" * i, end="")
+
+        # Print gap between half-pyramids
+        print(" " * gap_length, end="")
+
+        # Print right #'s
+        print("#" * i, end="")

@@ -6,8 +6,8 @@ from cs50 import get_int
 def main():
 
     # Get card number
-    card_number = get_int("Number: ")
-    
+    card_number = get_string("Number: ")
+
     sum = check_sum(card_number)
 
     card_type = verify(sum, card_number)

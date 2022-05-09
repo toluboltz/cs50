@@ -1,12 +1,12 @@
 # Program that determines whether a provided credit card number is valid according to Luhn’s algorithm
 
-from cs50 import get_string
+import re
 
 
 def main():
 
     # Get card number as a string
-    card_number = get_string("Number: ")
+    card_number = input"Number: ")
 
     # Compute the checksum on the reversed card number
     sum = check_sum(card_number[::-1])
@@ -44,6 +44,12 @@ def verify(sum, card_number):
     # Check if checksum ends with 0
     if sum % 10 == 0:
         return "INVALID"
+
+    amex = re.compile(r'[3][47]')
+    mastercard = re.compile(r'[5][12345]')
+    visa = re.compile(r'[4]')
+
+    match = 
 
 
 if __name__ == "__main__":

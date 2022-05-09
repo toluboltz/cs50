@@ -18,7 +18,7 @@ def check_sum(card_number):
 
 
 def verify(sum, card_number):
-    
+    pass
 
 
 if __name__ == "__main__":

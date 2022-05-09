@@ -45,7 +45,7 @@ def verify(sum, card_number):
     if sum % 10 != 0:
         return "INVALID"
 
-    
+    # 
     amex = re.compile(r'[3][47]')
     mastercard = re.compile(r'[5][12345]')
     visa = re.compile(r'[4]')

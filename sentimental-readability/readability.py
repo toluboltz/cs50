@@ -5,7 +5,12 @@ def main():
     # Get text message
     text = input("Text: ")
 
-    count_letters(text)
+    # Count number of letters 
+    letter_count = count_letters(text)
+
+    word_count = count_words(text)
+
+    sentence_count = count_sentences(text)
 
 
 def count_letters(text):

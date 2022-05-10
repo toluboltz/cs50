@@ -22,13 +22,20 @@ def count_letters(text):
     """Count letters in text. Return number of letters."""
     p = re.compile(r'[A-Z]')
 
+    count = 0
     for l in text:
-        if (p.match())
+        if (p.match(l)):
+            count += 1
+
+    return count
 
 
 def count_words(text):
     """Count words in text. Return number of words."""
-    pass
+    p = re.comile(r'[ ]')
+
+    count = 1
+    for 
 
 
 def count_sentences(text):

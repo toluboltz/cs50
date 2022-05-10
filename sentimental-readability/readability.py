@@ -16,14 +16,17 @@ def main():
 
 
 def count_letters(text):
-    pass
+    """Count letters in text. Return number of letters."""
+    
 
 
 def count_words(text):
+    """Count words in text. Return number of words."""
     pass
 
 
 def count_sentences(text):
+    """Count sentences in text. Return number of sentences."""
     pass
 
 

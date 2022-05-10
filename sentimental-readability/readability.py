@@ -22,7 +22,11 @@ def count(text):
     """Count letters in text. Return number of letters."""
     letter = re.compile(r'[A-Z]')
     words = re.compile(r'[ ]')
-    sentences = re.compile(r'[])
+    sentences = re.compile(r'[.!?]')
+
+    letter_count = 0
+    word_count = 1
+    sentence_count = 1
 
 
 def count_letters(text):

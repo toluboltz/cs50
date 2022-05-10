@@ -2,14 +2,16 @@
 
 def main():
 
-    # Get text message
+    # Get text from user
     text = input("Text: ")
 
-    # Count number of letters 
+    # Count number of letters in text
     letter_count = count_letters(text)
 
+    # Count number of words in text
     word_count = count_words(text)
 
+    # Count number of sentences in text
     sentence_count = count_sentences(text)
 
 

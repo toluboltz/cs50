@@ -9,7 +9,18 @@ def main():
     text = input("Text: ").upper()
 
     # Count number of letters, words and sentences
-    letter, word, sentence = count(text)
+    letters, words, sentences = count(text)
+
+    # Compute letters per 100 words
+    L = letters / words * 100
+
+    #  Compute sentences per 100 words
+    S = sentences / words * 100
+
+    # Compute readability index
+    index = 0.0588 * L - 0.296 * S - 15.8
+
+    
 
     print(letter, word, sentence)
 

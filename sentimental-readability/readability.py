@@ -18,6 +18,13 @@ def main():
     sentence_count = count_sentences(text)
 
 
+def count(text):
+    """Count letters in text. Return number of letters."""
+    letter = re.compile(r'[A-Z]')
+    words = re.compile(r'[ ]')
+    sentences = re.compile(r'[])
+
+
 def count_letters(text):
     """Count letters in text. Return number of letters."""
     p = re.compile(r'[A-Z]')
@@ -35,7 +42,7 @@ def count_words(text):
     p = re.comile(r'[ ]')
 
     count = 1
-    for 
+    for
 
 
 def count_sentences(text):

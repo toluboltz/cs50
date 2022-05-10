@@ -18,15 +18,19 @@ def main():
     S = sentences / words * 100
 
     # Compute readability index
-    index = 0.0588 * L - 0.296 * S - 15.8
+    index = round(0.0588 * L - 0.296 * S - 15.8)
 
-    
-
-    print(letter, word, sentence)
+    # Print out grade
+    if (index < 1):
+        print('Before Grade 1')
+    elif (index >= 16):
+        print('Grade 16+')
+    else:
+        print(f'Grade {index}')
 
 
 def count(text):
-    """Count letters in text. Return number of letters."""
+    """Count letters, words and sentences in text. Return number of letters, words and sentences."""
     letters = re.compile(r'[A-Z]')
     words = re.compile(r'[ ]')
     sentences = re.compile(r'[.!?]')

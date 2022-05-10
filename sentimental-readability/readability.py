@@ -1,9 +1,12 @@
 # Program that computes the approximate grade level needed to comprehend some text
 
+import re
+
+
 def main():
 
     # Get text from user
-    text = input("Text: ")
+    text = input("Text: ").upper()
 
     # Count number of letters in text
     letter_count = count_letters(text)
@@ -17,7 +20,10 @@ def main():
 
 def count_letters(text):
     """Count letters in text. Return number of letters."""
-    
+    p = re.compile(r'[A-Z]')
+
+    for l in text:
+        if (p.match())
 
 
 def count_words(text):

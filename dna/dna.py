@@ -32,6 +32,8 @@ def main():
     for subsequence in STR:
         STR[subsequence] = longest_match(dna_sequence, subsequence)
 
+    print(STR)
+
     # TODO: Check database for matching profiles
     for person in database:
         if person == STR:

@@ -8,17 +8,24 @@ def main():
     if (sys.argv != 3):
         sys.exit('Usage: python dna.py data.csv sequence.txt')
 
-    # Read Genomes
+    # Initialize dictionary to store DNA sequences and STR values
+    STR = {}
+    with open(sys.argv[1]) as file:
+        reader = csv.reader(file)
+        header = next(reader)
+        for i in range(1, len(header)):
+            STR[header[i]] = 0
 
-    # TODO: Read database file into a variable
+    # Read database file into a variable
     database = []
     with open(sys.argv[1]) as file:
-        STRs = next(csv.reader(file)[1:]
         reader = csv.DictReader(file)
         for row in reader:
+            database.append(row)
 
-
-    # TODO: Read DNA sequence file into a variable
+    # Read DNA sequence file into a variable
+    with open(sys.argv[2]) as file:
+        
 
     # TODO: Find longest match of each STR in DNA sequence
 

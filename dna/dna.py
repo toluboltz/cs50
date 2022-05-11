@@ -21,6 +21,9 @@ def main():
     with open(sys.argv[1]) as file:
         reader = csv.DictReader(file)
         for row in reader:
+            for sequence in row:
+                if sequence in STR:
+                    row[sequence] = int(row[sequence])
             database.append(row)
 
     # Read DNA sequence file into a variable
@@ -36,9 +39,7 @@ def main():
 
     # TODO: Check database for matching profiles
     for person in database:
-        print(person)
         name = person.pop('name')
-        print(person)
         if person == STR:
             print(name)
     print('No match')

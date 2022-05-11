@@ -10,7 +10,7 @@ def main():
 
     # Initialize dictionary to store DNA sequences and STR values
     STR = {}
-    with open(sys.argv[1]) as file:
+    with open(sys.argv[1], 'r') as file:
         reader = csv.reader(file)
         header = next(reader)
         for i in range(1, len(header)):
@@ -18,7 +18,7 @@ def main():
 
     # Read database file into a variable
     database = []
-    with open(sys.argv[1]) as file:
+    with open(sys.argv[1], 'r') as file:
         reader = csv.DictReader(file)
         for row in reader:
             for sequence in row:

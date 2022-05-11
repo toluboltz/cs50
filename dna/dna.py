@@ -24,11 +24,13 @@ def main():
             database.append(row)
 
     # Read DNA sequence file into a variable
-    dna = ''
+    dna_sequence = ''
     with open(sys.argv[2]) as file:
-        dna = file.read()
+        dna_sequence = file.read()
 
     # TODO: Find longest match of each STR in DNA sequence
+    for subsequence in STR:
+        STR[subsequence] = longest_match(dna_sequence, subsequence)
 
     # TODO: Check database for matching profiles
 

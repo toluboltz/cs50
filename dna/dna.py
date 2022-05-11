@@ -31,17 +31,18 @@ def main():
     with open(sys.argv[2]) as file:
         dna_sequence = file.read()
 
-    # TODO: Find longest match of each STR in DNA sequence
+    # Find longest match of each STR in DNA sequence
     for subsequence in STR:
         STR[subsequence] = longest_match(dna_sequence, subsequence)
 
-    # TODO: Check database for matching profiles
+    # Check database for matching profiles
     for person in database:
         name = person.pop('name')
         if person == STR:
             print(name)
             return
 
+    # If no match is found
     print('No match')
 
 

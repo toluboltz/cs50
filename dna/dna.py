@@ -5,7 +5,7 @@ import sys
 def main():
 
     # Check for command-line usage
-    if (sys.argv != 3):
+    if len(sys.argv) != 3:
         sys.exit('Usage: python dna.py data.csv sequence.txt')
 
     # Initialize dictionary to store DNA sequences and STR values

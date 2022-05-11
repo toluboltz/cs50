@@ -36,9 +36,10 @@ def main():
 
     # TODO: Check database for matching profiles
     for person in database:
-        name = person.pop()
+        name = person.pop('name')
+        print(person)
         if person == STR:
-            print(person['name'])
+            print(name)
     print('No match')
 
     return

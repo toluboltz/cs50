@@ -20,4 +20,7 @@ WHERE activity = 'exit'
 AND month = 7
 AND hour = 10
 AND minute >= 5
-AND minute <= 25
+AND minute <= 25;
+
+-- Investigating Eugene's statements
+-- 

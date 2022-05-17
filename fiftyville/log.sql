@@ -78,9 +78,10 @@ AND origin_airport_id = (
     FROM airports
     WHERE city = 'Fiftyville'
 )
-ORDER BY hour, minute;
+ORDER BY hour, minute
+LIMIT 1;
 
--- Get list of passenger information leaving Fiftyville on July 29
+-- Get list of passenger information leaving Fiftyville on the earliest flight on July 29
 SELECT *
 FROM passengers
 WHERE flight_id
@@ -93,6 +94,19 @@ IN (
         SELECT id
         FROM airports
         WHERE city = 'Fiftyville'
+    )
+    AND destination_airport_id = (
+        SELECT destination_airport_id
+        FROM flights
+        WHERE month = 7
+        AND day = 29
+        AND origin_airport_id = (
+            SELECT id
+            FROM airports
+            WHERE city = 'Fiftyville'
+        )
+        ORDER BY hour, minute
+        LIMIT 1
     )
 );
 

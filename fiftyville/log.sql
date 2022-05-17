@@ -68,6 +68,18 @@ AND origin_airport_id = (
     WHERE city = 'Fiftyville'
 );
 
+-- Get the earliest flight leaving on July 29
+SELECT *
+FROM flights
+WHERE month = 7
+AND day = 29
+AND origin_airport_id = (
+    SELECT id
+    FROM airports
+    WHERE city = 'Fiftyville'
+)
+ORDER BY hour, minute;
+
 -- Get list of passenger information leaving Fiftyville on July 29
 SELECT *
 FROM passengers

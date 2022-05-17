@@ -56,3 +56,30 @@ AND duration < 60;
 SELECT *
 FROM airports
 WHERE city = 'Fiftyville';
+
+-- Get list of flights from Fiftyville leaving on July 29
+SELECT *
+FROM flights
+WHERE month = 7
+AND day = 29
+AND origin_airport_id = (
+    SELECT id
+    FROM airports
+    WHERE city = 'Fiftyville'
+);
+
+-- Get list of passenger information leaving Fiftyville on July 29
+SELECT *
+FROM passengers
+WHERE flight_id
+IN (
+    SELECT id
+    FROM flights
+    WHERE month = 7
+    AND day = 29
+    AND origin_airport_id = (
+        SELECT id
+        FROM airports
+        WHERE city = 'Fiftyville'
+    )
+);

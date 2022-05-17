@@ -111,7 +111,7 @@ IN (
 );
 
 -- Combining some of the info I've extracted
--- Get list of people who exited the bakery that morning, used the atm on Leggett Street and booked a flight for the next day
+-- Get list of people who exited the bakery that morning, used the atm on Leggett Street and booked the earliest flight for the next day
 SELECT *
 FROM people
 WHERE id IN (
@@ -172,3 +172,6 @@ AND license_plate IN (
     AND minute >= 5
     AND minute <= 25
 );
+--  Bruce is the thief
+
+-- Get the city the thief escaped to

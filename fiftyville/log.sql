@@ -89,5 +89,28 @@ IN (
 SELECT *
 FROM people
 WHERE phone_number IN (
+    SELECT caller
+    FROM phone_calls
+    WHERE month = 7
+    AND day = 28
+    AND duration < 60;
+)
+AND passport IN (
+    SELECT passport_number
+    FROM passengers
+    WHERE flight_id
+    IN (
+        SELECT id
+        FROM flights
+        WHERE month = 7
+        AND day = 29
+        AND origin_airport_id = (
+            SELECT id
+            FROM airports
+            WHERE city = 'Fiftyville'
+        )
+    )
+)
+AND license_plate IN (
     
 )

@@ -14,3 +14,10 @@ WHERE transcript LIKE '%bakery%';
 
 -- Investigating Ruth's statements in the transcript
 -- Check the bakery security logs between 10:05am and 10:25am
+SELECT activity, license_plate, minute
+FROM bakery_security_logs
+WHERE activity = 'exit'
+AND month = 7
+AND hour = 10
+AND minute >= 5
+AND minute <= 25

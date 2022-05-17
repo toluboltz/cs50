@@ -31,8 +31,5 @@ AND day = 28
 AND transaction_type = 'withdraw'
 AND atm_location = 'Leggett Street';
 
--- Get list of all the phone calls made after 10:15 am on July 28
-
-
 -- Investigating Raymond's statements
---
+-- Get list of all the phone calls made after 10:15 am on July 28 with a duration of less than a minute

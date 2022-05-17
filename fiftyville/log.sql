@@ -108,7 +108,7 @@ AND phone_number IN (
     AND day = 28
     AND duration < 60
 )
-AND passport IN (
+AND passport_number IN (
     SELECT passport_number
     FROM passengers
     WHERE flight_id

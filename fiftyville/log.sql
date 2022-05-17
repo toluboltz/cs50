@@ -38,3 +38,8 @@ FROM phone_calls
 WHERE month = 7
 AND day = 28
 AND duration < 60;
+
+-- Get the airport the thief departed from
+SELECT *
+FROM airports
+WHERE city = 'Fiftyville';

@@ -14,7 +14,7 @@ WHERE transcript LIKE '%bakery%';
 
 -- Investigating Ruth's statements in the transcript
 -- Check the bakery security logs between 10:05am and 10:25am
-SELECT activity, license_plate, minute
+SELECT license_plate
 FROM bakery_security_logs
 WHERE activity = 'exit'
 AND month = 7

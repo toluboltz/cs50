@@ -8,4 +8,9 @@ AND day = 28
 AND street = 'Humphrey Street';
 
 -- Query the interviews table to see what the witnesses said about the theft
-SELECT
+SELECT name, transcript
+FROM interviews
+WHERE transcript LIKE '%bakery%';
+
+-- Investigating Ruth's statements in the transcript
+-- Check the bakery security logs between 10:05am and 10:25am

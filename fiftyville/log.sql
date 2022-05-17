@@ -106,7 +106,7 @@ AND phone_number IN (
     FROM phone_calls
     WHERE month = 7
     AND day = 28
-    AND duration < 60;
+    AND duration < 60
 )
 AND passport IN (
     SELECT passport_number

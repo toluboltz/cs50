@@ -88,7 +88,10 @@ IN (
 -- Get list of people who exited the bakery that morning, used the atm on Leggett Street and booked a flight for the next day
 SELECT *
 FROM people
-WHERE phone_number IN (
+WHERE id IN (
+    
+)
+AND phone_number IN (
     SELECT caller
     FROM phone_calls
     WHERE month = 7
@@ -112,5 +115,11 @@ AND passport IN (
     )
 )
 AND license_plate IN (
-    
+    SELECT license_plate
+    FROM bakery_security_logs
+    WHERE activity = 'exit'
+    AND month = 7
+    AND hour = 10
+    AND minute >= 5
+    AND minute <= 25
 )

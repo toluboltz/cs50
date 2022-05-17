@@ -196,7 +196,10 @@ WHERE id = (
 -- Get accomplice's phone number
 SELECT *
 FROM phone_calls
-WHERE caller = (
+WHERE month = 7
+AND day = 28
+AND duration < 60
+AND caller = (
     SELECT phone_number
     FROM people
     WHERE id IN (

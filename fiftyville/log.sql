@@ -148,6 +148,19 @@ AND passport_number IN (
             FROM airports
             WHERE city = 'Fiftyville'
         )
+        AND destination_airport_id = (
+            SELECT destination_airport_id
+            FROM flights
+            WHERE month = 7
+            AND day = 29
+            AND origin_airport_id = (
+                SELECT id
+                FROM airports
+                WHERE city = 'Fiftyville'
+            )
+            ORDER BY hour, minute
+            LIMIT 1
+        )
     )
 )
 AND license_plate IN (

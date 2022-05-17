@@ -23,4 +23,13 @@ AND minute >= 5
 AND minute <= 25;
 
 -- Investigating Eugene's statements
+-- Get list of those that withdrew money from the ATM on Leggett Street on July 28
+SELECT *
+FROM atm_transactions
+WHERE month = 7
+AND day = 28
+AND transaction_type = 'withdraw'
+AND atm_location = 'Leggett Street';
+
+-- Investigating Raymond's statements
 -- 

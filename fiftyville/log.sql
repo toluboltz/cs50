@@ -31,6 +31,19 @@ AND day = 28
 AND transaction_type = 'withdraw'
 AND atm_location = 'Leggett Street';
 
+-- Get the account numbers of all those that withrew from the ATM
+SELECT *
+FROM bank_accounts
+WHERE account_number
+IN (
+    SELECT account_number
+    FROM atm_transactions
+    WHERE month = 7
+    AND day = 28
+    AND transaction_type = 'withdraw'
+    AND atm_location = 'Leggett Street'
+);
+
 -- Investigating Raymond's statements
 -- Get list of all the phone calls made after 10:15 am on July 28 with a duration of less than a minute
 SELECT *

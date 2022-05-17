@@ -89,7 +89,17 @@ IN (
 SELECT *
 FROM people
 WHERE id IN (
-    
+    SELECT person_id
+    FROM bank_accounts
+    WHERE account_number
+    IN (
+        SELECT account_number
+        FROM atm_transactions
+        WHERE month = 7
+        AND day = 28
+        AND transaction_type = 'withdraw'
+        AND atm_location = 'Leggett Street'
+    )
 )
 AND phone_number IN (
     SELECT caller
@@ -122,4 +132,4 @@ AND license_plate IN (
     AND hour = 10
     AND minute >= 5
     AND minute <= 25
-)
+);

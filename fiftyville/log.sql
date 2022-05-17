@@ -33,3 +33,8 @@ AND atm_location = 'Leggett Street';
 
 -- Investigating Raymond's statements
 -- Get list of all the phone calls made after 10:15 am on July 28 with a duration of less than a minute
+SELECT *
+FROM phone_calls
+WHERE month = 7
+AND day = 28
+AND duration < 60;

@@ -261,3 +261,5 @@ AND caller = (
         AND minute <= 25
     )
 );
+
+-- Get the accomplice from the people table using the receiver phone number

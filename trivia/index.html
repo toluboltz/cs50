@@ -18,13 +18,15 @@
 
                 // When incorrect answer is clicked, change color to red
                 let incorrects = document.querySelectorAll('.incorrect');
-                for (let incorrect of incorrects)
-                {
+                for (let incorrect of incorrects) {
                     incorrect.addEventListener('click', function() {
                     incorrect.style.backgroundColor = 'red';
                     document.querySelector('#feedback1').innerHTML = 'Incorrect';
                 });
                 }
+
+                // Check free response submission
+                
             });
         </script>
     </head>

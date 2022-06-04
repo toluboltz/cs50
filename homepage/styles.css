@@ -2,6 +2,11 @@ h1 {
     text-align: center;
 }
 
+.header {
+    text-align: center;
+    padding: 32px;
+  }
+
 .row {
     display: flex;
     flex-wrap: wrap;

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function(){
     // make it as accordion for smaller screens
     if (window.innerWidth > 992) {
 
-        document.querySelectorAll('.navbar .nav-item').forEach(function(everyitem){
+        document.querySelectorAll('.nav .nav-link').forEach(function(everyitem){
 
             everyitem.addEventListener('mouseover', function(e){
 

@@ -15,3 +15,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#index-body:hover {
+    opacity: 1.0;
+}

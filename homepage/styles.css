@@ -2,4 +2,6 @@ body {
     background-color: #cccccc;
 }
 
-.nav
+.nav-item:hover .dropdown-menu {
+    display: block;
+}

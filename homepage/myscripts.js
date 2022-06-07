@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // When submit button on the form is clicked
     let submit = document.querySelector('#submit');
     submit.addEventListener('click', function() {
-        alert('Nice, you triggered this alert message!', 'success');
+        alert('Submitted!', 'success');
         form.reset();
     })
 })

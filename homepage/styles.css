@@ -41,3 +41,10 @@ h1 {
       max-width: 100%;
     }
   }
+
+.main {
+  max-width: 40%;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  box-shadow: 0 0 12px rgba(48, 87, 116, 0.8);
+}

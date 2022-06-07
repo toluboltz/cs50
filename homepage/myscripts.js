@@ -2,5 +2,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // When submit button on the form is clicked
-    let submit = document.querySelector
+    let submit = document.querySelector('.submit');
+    submit.addEventListener('click', function() {
+        
+    })
 })

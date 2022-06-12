@@ -140,6 +140,8 @@ def register():
         if request.form.get("password") != request.form.get("confirmation"):
             return apology("passwords do not match", 403)
 
+        # Hash the password
+        hashed_password = 
         # Insert new user into the database
         db.execute()
 

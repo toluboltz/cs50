@@ -143,7 +143,7 @@ def register():
         # Insert new username and hashed password into the database
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",
                    request.form.get("username"),
-                   generate_password_hash(request.form.get("password")
+                   generate_password_hash(request.form.get("password"))
         )
 
     # User reached route via GET (as by clicking a link or via redirect)

@@ -140,10 +140,8 @@ def register():
         if request.form.get("password") != request.form.get("confirmation"):
             return apology("passwords do not match", 403)
 
-        # Hash the password
-        hashed_password =
-        # Insert new user into the database
-        db.execute("INSERT INTO )
+        # Insert new username and hashed password into the database
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash())
 
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("register.html")

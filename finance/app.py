@@ -146,6 +146,9 @@ def register():
                    generate_password_hash(request.form.get("password"))
         )
 
+        # Redirect user to home page
+        return redirect("/login")
+
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("register.html")
 

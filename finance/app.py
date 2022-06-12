@@ -147,7 +147,7 @@ def register():
         )
 
         # Redirect user to home page
-        return redirect("/login")
+        return redirect("/")
 
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("register.html")

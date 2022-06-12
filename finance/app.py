@@ -141,9 +141,9 @@ def register():
             return apology("passwords do not match", 403)
 
         # Hash the password
-        hashed_password = 
+        hashed_password =
         # Insert new user into the database
-        db.execute()
+        db.execute("INSERT INTO )
 
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("register.html")

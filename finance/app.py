@@ -128,12 +128,22 @@ def register():
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
-        if 
+        # Ensure username doesn't exist in the database
+        if len(rows) == 1:
+            return apology("username already exists", 403)
 
         # Ensure password was submitted
-        elif not request.form.get("password"):
+        if not request.form.get("password"):
             return apology("must provide password", 403)
 
+        # Ensure passwords match
+        if request.form.get("password") != request.form.get("confirmation"):
+            return apology("passwords do not match", 403)
+
+        # Insert new user into the database
+        db.execute()
+
+    # User reached route via GET (as by clicking a link or via redirect)
     return render_template("register.html")
 
 

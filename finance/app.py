@@ -118,8 +118,17 @@ def quote():
 def register():
     """Register user"""
 
+    # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
-        return apology("TODO")
+
+        # Ensure username was submitted
+        if not request.form.get("username"):
+            return apology("must provide username", 403)
+
+        # Ensure password was submitted
+        elif not request.form.get("password"):
+            return apology("must provide password", 403)
+
     return render_template("register.html")
 
 

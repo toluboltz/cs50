@@ -120,7 +120,8 @@ def quote():
         if not quote:
             return apology("Invalid Symbol", 400)
 
-        # 
+        # Render stock's current price
+        
 
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("quote.html")

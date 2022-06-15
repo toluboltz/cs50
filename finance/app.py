@@ -50,7 +50,22 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    return apology("TODO")
+
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+
+        # Lookup stock quote
+        quote = lookup(request.form.get("symbol"))
+
+        # Ensure symbol is valid
+        if not quote:
+            return apology("Invalid Symbol", 400)
+
+        # Render stock's current price
+        return render_template("quoted.html", quote=quote)
+
+    # User reached route via GET (as by clicking a link or via redirect)
+    return render_template("buy.html")
 
 
 @app.route("/history")

@@ -91,6 +91,12 @@ def buy():
         new_cash = user_cash - shares_cost
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
 
+        # Flash a message
+        flash("Bought!")
+
+        # Redirect to homepage
+        return redirect("/")
+
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("buy.html")
 
@@ -205,6 +211,9 @@ def register():
 
         # Remember which user has logged in
         session["user_id"] = user_id
+
+        # Flash a message
+        flash("Registered!")
 
         # Redirect user to home page
         return redirect("/")

@@ -68,6 +68,9 @@ def buy():
         if request.form.get("shares") < 1:
             return apology("Shares must be postive integer", 400)
 
+        # Lookup current stock's price
+        stock = lookup(request.form.get("symbol"))
+
         #
 
     # User reached route via GET (as by clicking a link or via redirect)

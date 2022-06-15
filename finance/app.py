@@ -67,7 +67,7 @@ def buy():
             return apology("Invalid Symbol", 400)
 
         # Ensure number of shares is valid
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
         if shares < 1:
             return apology("Shares must be postive integer", 400)
 
@@ -75,7 +75,7 @@ def buy():
         user_id = session["user_id"]
 
         # Get user's current available cash
-        rows = db.execute("SELECT cash FROM user WHERE id = ?", user_id)
+        rows = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
 
         # Ensure the user can afford the purchase
         shares_cost = stock["price"] * request.form.get["shares"]

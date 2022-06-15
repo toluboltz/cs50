@@ -68,7 +68,7 @@ def buy():
         if request.form.get("shares") < 1:
             return apology("Shares must be postive integer", 400)
 
-        # 
+        #
 
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("buy.html")
@@ -177,10 +177,13 @@ def register():
             return apology("passwords do not match", 403)
 
         # Insert new username and hashed password into the database
-        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",
+        rows = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",
                    request.form.get("username"),
                    generate_password_hash(request.form.get("password"))
         )
+
+        # Remember which user has logged in
+        session["user_id"] = rows[0]["id"]
 
         # Redirect user to home page
         return redirect("/")

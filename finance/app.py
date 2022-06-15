@@ -78,7 +78,7 @@ def buy():
         rows = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
 
         # Ensure the user can afford the purchase
-        shares_cost = stock["price"] * request.form.get["shares"]
+        shares_cost = stock["price"] * shares
         user_cash = rows[0]["cash"]
         if user_cash < shares_cost:
             return apology("Can't afford", 400)

@@ -5,6 +5,7 @@ from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
+import datetime
 
 from helpers import apology, login_required, lookup, usd
 
@@ -82,7 +83,7 @@ def buy():
 
         # Otherwise, complete purchase
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)",
-                   user_id, stock["symbol"], shares, stock["price"], )
+                   user_id, stock["symbol"], shares, stock["price"], datetime.datetime.now())
 
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("buy.html")

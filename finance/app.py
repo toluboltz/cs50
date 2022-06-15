@@ -71,7 +71,11 @@ def buy():
         # Lookup current stock's price
         stock = lookup(request.form.get("symbol"))
 
-        #
+        # Get the user id
+        user_id = session["user_id"]
+
+        # Get user's current available cash
+        user_cash = db.execute("SELECT cash FROM user WHERE id = ?", user_id)
 
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("buy.html")

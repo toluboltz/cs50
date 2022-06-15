@@ -75,14 +75,14 @@ def buy():
         user_id = session["user_id"]
 
         # Get user's current available cash
-        user_cash = db.execute("SELECT cash FROM user WHERE id = ?", user_id)
+        rows = db.execute("SELECT cash FROM user WHERE id = ?", user_id)
 
         # Ensure the user can afford the purchase
         if user_cash < (stock["price"] * request.form.get["shares"]):
             return apology("Can't afford", 400)
 
         # Otherwise, complete purchase
-        
+
 
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("buy.html")

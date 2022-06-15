@@ -77,6 +77,9 @@ def buy():
         # Get user's current available cash
         user_cash = db.execute("SELECT cash FROM user WHERE id = ?", user_id)
 
+        # Ensure the user can afford the purchase
+        if user_cash < (stock["price"] * request.form.get["shares"]
+
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("buy.html")
 

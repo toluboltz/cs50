@@ -177,13 +177,13 @@ def register():
             return apology("passwords do not match", 403)
 
         # Insert new username and hashed password into the database
-        rows = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",
+        user_id = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",
                    request.form.get("username"),
                    generate_password_hash(request.form.get("password"))
         )
 
         # Remember which user has logged in
-        session["user_id"] = 
+        session["user_id"] = user_id
 
         # Redirect user to home page
         return redirect("/")

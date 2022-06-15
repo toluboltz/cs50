@@ -78,12 +78,18 @@ def buy():
         rows = db.execute("SELECT cash FROM user WHERE id = ?", user_id)
 
         # Ensure the user can afford the purchase
-        if rows[0]["cash"] < (stock["price"] * request.form.get["shares"]):
+        shares_cost = stock["price"] * request.form.get["shares"]
+        user_cash = rows[0]["cash"]
+        if user_cash < shares_cost:
             return apology("Can't afford", 400)
 
-        # Otherwise, complete purchase
+        # Otherwise, complete purchase and insert into transactions database
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)",
                    user_id, stock["symbol"], shares, stock["price"], datetime.datetime.now())
+
+        # update the cash on users database
+        new_cash = user_cash - shares_cost
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
 
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("buy.html")

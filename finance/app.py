@@ -55,21 +55,21 @@ def buy():
     if request.method == "POST":
 
         # Ensure input is not blank
-        if not request.form.get("symbol"):
+        symbol = request.form.get("symbol")
+        if not symbol:
             return apology("Input is blank", 400)
-
-        # Lookup stock quote
-        quote = lookup(request.form.get("symbol"))
-
-        # Ensure symbol is valid
-        if not quote:
-            return apology("Invalid Symbol", 400)
-
-        if request.form.get("shares") < 1:
-            return apology("Shares must be postive integer", 400)
 
         # Lookup current stock's price
         stock = lookup(request.form.get("symbol"))
+
+        # Ensure symbol is valid
+        if not stock:
+            return apology("Invalid Symbol", 400)
+
+        # Ensure number of shares is valid
+        shares = request.form.get("shares")
+        if shares < 1:
+            return apology("Shares must be postive integer", 400)
 
         # Get the user id
         user_id = session["user_id"]

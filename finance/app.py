@@ -56,7 +56,7 @@ def buy():
 
         # Ensure input is not blank
         if not request.form.get("symbol"):
-            return apology(")
+            return apology("Input is blank", 400)
 
         # Lookup stock quote
         quote = lookup(request.form.get("symbol"))
@@ -65,8 +65,10 @@ def buy():
         if not quote:
             return apology("Invalid Symbol", 400)
 
-        # Render stock's current price
-        return render_template("quoted.html", quote=quote)
+        if request.form.get("shares") < 1:
+            return apology("Shares must be postive integer", 400)
+
+        # 
 
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("buy.html")

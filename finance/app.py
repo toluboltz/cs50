@@ -54,6 +54,10 @@ def buy():
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
 
+        # Ensure input is not blank
+        if not request.form.get("symbol"):
+            return apology(")
+
         # Lookup stock quote
         quote = lookup(request.form.get("symbol"))
 

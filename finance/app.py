@@ -81,6 +81,9 @@ def buy():
         if user_cash < (stock["price"] * request.form.get["shares"]):
             return apology("Can't afford", 400)
 
+        # Otherwise, complete purchase
+        
+
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("buy.html")
 

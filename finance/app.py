@@ -55,8 +55,7 @@ def buy():
     if request.method == "POST":
 
         # Ensure input is not blank
-        symbol = request.form.get("symbol")
-        if not symbol:
+        if not request.form.get("symbol"):
             return apology("Input is blank", 400)
 
         # Lookup current stock's price
@@ -83,7 +82,7 @@ def buy():
 
         # Otherwise, complete purchase
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)",
-                   user_id, stock["symbol"], request.form.get("shares"), )
+                   user_id, stock["symbol"], shares, stock["price"], )
 
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("buy.html")

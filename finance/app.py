@@ -82,7 +82,8 @@ def buy():
             return apology("Can't afford", 400)
 
         # Otherwise, complete purchase
-        
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)",
+                   user_id, stock["symbol"], request.form.get("shares"), )
 
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("buy.html")

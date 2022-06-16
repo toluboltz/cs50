@@ -48,7 +48,9 @@ def index():
     # Get the user ID
     user_id = session["user_id"]
 
-    
+    rows = db.execute("SELECT symbol, name, SUM(shares) AS shares, cash FROM transactions \
+                      JOIN users on transactions.user_id = users.id \
+                      WHERE transactions.user_id = ? GROUP BY transactions.user_id", user_id)
     return apology("TODO")
 
 

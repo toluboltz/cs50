@@ -48,8 +48,17 @@ def index():
     # Get the user ID
     user_id = session["user_id"]
 
-    rows = db.execute("SELECT symbol, name, SUM(shares) AS shares FROM transactions \
-                      WHERE transactions.user_id = ? GROUP BY transactions.s", user_id)
+    # Get the user's stock info
+    stocks_info = db.execute("SELECT symbol, name, SUM(shares) AS shares FROM transactions \
+                      WHERE transactions.user_id = ? GROUP BY transactions.symbol", user_id)
+
+    # Get the user's current cash
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+
+    # Get current price for each stock
+    stock_price = []
+    for i in range(stocks_info):
+        lookup(stocks_info[i]["symbol"])
     return apology("TODO")
 
 

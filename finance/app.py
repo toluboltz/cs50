@@ -251,7 +251,8 @@ def sell():
 
     # User reached route via POST (as by submiting a form via POST)
     if request.method == "POST":
-        pass
+
+        # Ensure user enters valid stock
 
     # User reached route via GET (as by clicking a link or via redirect)
     # Get all user's stocks

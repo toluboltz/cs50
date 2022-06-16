@@ -274,12 +274,19 @@ def sell():
         if user_shares < shares:
             return apology("Too many shares")
 
-        # Complete transaction
-        # Update number of shares
-        db.execute("UPDATE transactions SET )
+         # Otherwise, complete purchase and insert into transactions database
+        db.execute("INSERT INTO transactions (user_id, symbol, name, shares, price, date) VALUES (?, ?, ?, ?, ?, ?)",
+                   user_id, stock["symbol"], stock["name"], -1 * shares, stock["price"], datetime.datetime.now())
 
+        # update the cash on users database
+        new_cash = user_cash - shares_cost
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
 
-        # Complete transaction
+        # Flash a message
+        flash("Bought!")
+
+        # Redirect to homepage
+        return redirect("/")
 
 
 

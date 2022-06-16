@@ -255,7 +255,7 @@ def sell():
 
     # User reached route via GET (as by clicking a link or via redirect)
     # Get all user's stocks
-    db.execute("SELECT symbol FROM transactions where )
+    db.execute("SELECT symbol FROM transactions WHERE user_id = ?", user_id)
     return render_template("sell.html")
 
     return apology("TODO")

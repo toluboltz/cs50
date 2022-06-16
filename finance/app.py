@@ -250,7 +250,7 @@ def sell():
     user_id = session["user_id"]
 
     # Get all user's stocks
-    stocks = db.execute("SELECT symbol FROM transactions WHERE user_id = ?", user_id)
+    stocks = db.execute("SELECT symbol, SUM(shares) as shares FROM transactions WHERE user_id = ? GROUP BY symbol", user_id)
 
     # User reached route via POST (as by submiting a form via POST)
     if request.method == "POST":
@@ -264,8 +264,16 @@ def sell():
         if symbol not in [stock["symbol"] for stock in stocks]:
             return apology("Symbol not owned")
 
+        # Ensure number of shares is valid
+        shares = int(request.form.get("shares"))
+        if shares < 1:
+            return apology("Shares must be postive integer", 400)
+
+        # Ensure user owns number of shares
+
+
         # Complete transaction
-        
+
 
 
     # User reached route via GET (as by clicking a link or via redirect)

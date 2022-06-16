@@ -250,7 +250,7 @@ def sell():
     user_id = session["user_id"]
 
     # Get all user's stocks
-    stocks = db.execute("SELECT symbol FROM transactions WHERE user_id = ? GROUP BY symbol", user_id)
+    stocks = db.execute("SELECT symbol FROM transactions WHERE user_id = ?", user_id)
 
     # User reached route via POST (as by submiting a form via POST)
     if request.method == "POST":
@@ -271,7 +271,8 @@ def sell():
 
         # Ensure user owns number of shares
         user_shares = db.execute("SELECT SUM(shares) as shares WHERE symbol = ?", symbol)
-        if
+        if user_shares[0]["shares"] < shares:
+            return apology("Too many shares")
 
 
         # Complete transaction

@@ -250,7 +250,7 @@ def sell():
     user_id = session["user_id"]
 
     # Get all user's stocks
-    stocks = db.execute("SELECT symbol FROM transactions WHERE user_id = ?", user_id)
+    symbols = db.execute("SELECT symbol FROM transactions WHERE user_id = ?", user_id)
 
     # User reached route via POST (as by submiting a form via POST)
     if request.method == "POST":
@@ -261,7 +261,7 @@ def sell():
             return apology("Missing symbol")
 
         # Ensure user owns stock
-        if symbol not in [stock["symbol"] for stock in stocks]:
+        if symbol not in [symbol["symbol"] for symbol in symbols]:
             return apology("Symbol not owned")
 
         # Ensure number of shares is valid
@@ -274,7 +274,7 @@ def sell():
         if user_shares < shares:
             return apology("Too many shares")
 
-         # Otherwise, complete purchase and insert into transactions database
+        # Otherwise, complete purchase and insert into transactions database
         db.execute("INSERT INTO transactions (user_id, symbol, name, shares, price, date) VALUES (?, ?, ?, ?, ?, ?)",
                    user_id, stock["symbol"], stock["name"], -1 * shares, stock["price"], datetime.datetime.now())
 

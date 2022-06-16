@@ -60,7 +60,7 @@ def index():
         stocks_info[i]["price"] = lookup(stocks_info[i]["symbol"])["price"]
         stocks_info[i]["total"] = stocks_info[i]["price"] * stocks_info[i]["shares"]
 
-    return render_template("index.html", stocks_info=stocks_info, cash=cash)
+    return render_template("index.html", stocks_info=stocks_info, cash=cash, total=sum(stocks_info["total"])+cash)
 
 
 @app.route("/buy", methods=["GET", "POST"])

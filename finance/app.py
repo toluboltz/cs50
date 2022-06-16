@@ -133,7 +133,7 @@ def history():
     # Get all user's transactions
     transactions = db.execute("SELECT symbol, shares, price, date FROM transactions")
 
-     # User reached route via GET (as by clicking a link or via redirect)
+    # User reached route via GET (as by clicking a link or via redirect)
     return render_template("history.html", transactions=transactions)
 
 
@@ -234,9 +234,9 @@ def register():
 
         # Insert new username and hashed password into the database
         user_id = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",
-                   request.form.get("username"),
-                   generate_password_hash(request.form.get("password"))
-        )
+                             request.form.get("username"),
+                             generate_password_hash(request.form.get("password"))
+                  )
 
         # Remember which user has logged in
         session["user_id"] = user_id

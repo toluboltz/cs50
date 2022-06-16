@@ -275,6 +275,8 @@ def sell():
             return apology("Too many shares")
 
         # Otherwise, complete purchase and insert into transactions database
+        # Lookup current stock's price
+        stock = lookup(request.form.get("symbol"))
         db.execute("INSERT INTO transactions (user_id, symbol, name, shares, price, date) VALUES (?, ?, ?, ?, ?, ?)",
                    user_id, stock["symbol"], stock["name"], -1 * shares, stock["price"], datetime.datetime.now())
 

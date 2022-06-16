@@ -58,7 +58,8 @@ def index():
     # Get current price for each stock
     stock_price = []
     for i in range(stocks_info):
-        lookup(stocks_info[i]["symbol"])
+        stocks_info[i]["price"] = lookup(stocks_info[i]["symbol"])["price"]
+        
     return apology("TODO")
 
 

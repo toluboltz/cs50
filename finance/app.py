@@ -275,7 +275,8 @@ def sell():
             return apology("Too many shares")
 
         # Complete transaction
-        
+        # Update number of shares
+        db.execute("UPDATE transactions SET )
 
 
         # Complete transaction

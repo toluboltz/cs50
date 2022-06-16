@@ -270,7 +270,7 @@ def sell():
             return apology("Shares must be postive integer", 400)
 
         # Ensure user owns number of shares
-        user_shares = db.execute("SELECT SUM(shares) as shares WHERE symbol = ?", symbol)
+        user_shares = db.execute("SELECT SUM(shares) FROM transactions as shares WHERE symbol = ?", symbol)
         if user_shares[0]["shares"] < shares:
             return apology("Too many shares")
 

@@ -246,7 +246,8 @@ def register():
 def sell():
     """Sell shares of stock"""
 
-    
+    # Get user ID
+    user_id = session["user_id"]
 
     # User reached route via POST (as by submiting a form via POST)
     if request.method == "POST":

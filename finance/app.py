@@ -246,13 +246,15 @@ def register():
 def sell():
     """Sell shares of stock"""
 
+    
+
     # User reached route via POST (as by submiting a form via POST)
     if request.method == "POST":
         #
 
     # User reached route via GET (as by clicking a link or via redirect)
     # Get all user's stocks
-    db.execute("SELECT symbol)
+    db.execute("SELECT symbol FROM transactions where )
     return render_template("sell.html")
 
     return apology("TODO")

@@ -56,11 +56,10 @@ def index():
     cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
 
     # Get current price for each stock
-    stock_price = []
     for i in range(stocks_info):
         stocks_info[i]["price"] = lookup(stocks_info[i]["symbol"])["price"]
-        
-    return apology("TODO")
+
+    return render_template("index.html", stocks_info=stocks_info, cash=cash)
 
 
 @app.route("/buy", methods=["GET", "POST"])

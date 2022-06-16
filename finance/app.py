@@ -280,12 +280,17 @@ def sell():
         db.execute("INSERT INTO transactions (user_id, symbol, name, shares, price, date) VALUES (?, ?, ?, ?, ?, ?)",
                    user_id, stock["symbol"], stock["name"], -1 * shares, stock["price"], datetime.datetime.now())
 
-        # update the cash on users database
-        new_cash = user_cash - shares_cost
+         # Get user's current available cash
+        rows = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+
+        # Ensure the user can afford the purchase
+        shares_cost = stock["price"] * shares
+        user_cash = rows[0]["cash"]
+        new_cash = user_cash + shares_cost
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
 
         # Flash a message
-        flash("Bought!")
+        flash("Sold!")
 
         # Redirect to homepage
         return redirect("/")

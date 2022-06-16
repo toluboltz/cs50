@@ -256,11 +256,12 @@ def sell():
     if request.method == "POST":
 
         # Ensure user enters valid stock
-        if not request.form.get("symbol"):
+        symbol = request.form.get("symbol")
+        if not symbol:
             return apology("Missing symbol")
 
         # Ensure user owns stock
-        
+        if not symbol in 
 
 
     # User reached route via GET (as by clicking a link or via redirect)

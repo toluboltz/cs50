@@ -22,8 +22,15 @@
                     <td>{{ stock["name"] }}</td>
                     <td>{{ stock["shares"] }}</td>
                     <td>{{ stock["price"] }}</td>
-                    
+                    <td>{{ stock["total"] }}</td>
                 </tr>
+            {% endfor %}
         </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                
+            </tr>
+        </tfoot>
     </table>
 {% endblock %}

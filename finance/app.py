@@ -298,4 +298,4 @@ def sell():
 
 
     # User reached route via GET (as by clicking a link or via redirect)
-    return render_template("sell.html", stocks=stocks)
+    return render_template("sell.html", stocks=symbols)

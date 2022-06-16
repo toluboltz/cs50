@@ -261,7 +261,8 @@ def sell():
             return apology("Missing symbol")
 
         # Ensure user owns stock
-        if not symbol in 
+        if symbol not in [stock["symbol"] for stock in stocks]:
+            return apology(")
 
 
     # User reached route via GET (as by clicking a link or via redirect)

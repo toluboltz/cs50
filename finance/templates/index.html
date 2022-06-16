@@ -17,7 +17,13 @@
         </thead>
         <tbody>
             {% for stock in stocks_info %}
-            
+                <tr>
+                    <td>{{ stock["symbol"] }}</td>
+                    <td>{{ stock["name"] }}</td>
+                    <td>{{ stock["shares"] }}</td>
+                    <td>{{ stock["price"] }}</td>
+                    
+                </tr>
         </tbody>
     </table>
 {% endblock %}

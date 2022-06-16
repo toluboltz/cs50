@@ -295,7 +295,5 @@ def sell():
         # Redirect to homepage
         return redirect("/")
 
-
-
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("sell.html", stocks=symbols)

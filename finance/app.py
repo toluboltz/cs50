@@ -264,6 +264,9 @@ def sell():
         if symbol not in [stock["symbol"] for stock in stocks]:
             return apology("Symbol not owned")
 
+        # Complete transaction
+        
+
 
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("sell.html", stocks=stocks)

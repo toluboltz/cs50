@@ -48,7 +48,7 @@ def index():
     # Get the user ID
     user_id = session["user_id"]
 
-    rows = d
+    
     return apology("TODO")
 
 
@@ -89,8 +89,8 @@ def buy():
             return apology("Can't afford", 400)
 
         # Otherwise, complete purchase and insert into transactions database
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)",
-                   user_id, stock["symbol"], shares, stock["price"], datetime.datetime.now())
+        db.execute("INSERT INTO transactions (user_id, symbol, name, shares, price, date) VALUES (?, ?, ?, ?, ?, ?)",
+                   user_id, stock["symbol"], stock["name"], shares, stock["price"], datetime.datetime.now())
 
         # update the cash on users database
         new_cash = user_cash - shares_cost

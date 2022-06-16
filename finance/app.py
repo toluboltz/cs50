@@ -210,22 +210,22 @@ def register():
 
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("must provide username", 403)
+            return apology("must provide username")
 
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         # Ensure username doesn't exist in the database
         if len(rows) == 1:
-            return apology("username already exists", 403)
+            return apology("username already exists")
 
         # Ensure password was submitted
         if not request.form.get("password"):
-            return apology("must provide password", 403)
+            return apology("must provide password")
 
         # Ensure passwords match
         if request.form.get("password") != request.form.get("confirmation"):
-            return apology("passwords do not match", 403)
+            return apology("passwords do not match")
 
         # Insert new username and hashed password into the database
         user_id = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",

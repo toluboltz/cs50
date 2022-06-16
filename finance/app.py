@@ -48,7 +48,7 @@ def index():
     # Get the user ID
     user_id = session["user_id"]
 
-    
+    rows = d
     return apology("TODO")
 
 

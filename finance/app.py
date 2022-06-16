@@ -262,7 +262,7 @@ def sell():
 
         # Ensure user owns stock
         if symbol not in [stock["symbol"] for stock in stocks]:
-            return apology(")
+            return apology("Symbol not owned")
 
 
     # User reached route via GET (as by clicking a link or via redirect)

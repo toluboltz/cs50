@@ -50,7 +50,7 @@ def index():
 
     rows = db.execute("SELECT symbol, name, SUM(shares) AS shares, cash FROM transactions \
                       JOIN users on transactions.user_id = users.id \
-                      WHERE transactions.user_id = ? GROUP BY transactions.user_id", user_id)
+                      WHERE transactions.user_id = ? GROUP BY transactions.s", user_id)
     return apology("TODO")
 
 

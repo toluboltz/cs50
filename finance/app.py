@@ -85,12 +85,13 @@ def buy():
         if not stock:
             return apology("Invalid Symbol")
 
-        # Ensure number of shares is valid
+        # Ensure shares is an integer
         try:
             shares = int(request.form.get("shares"))
         except ValueError:
             return apology("Shares must be integer")
-            
+
+        # Ensure shares is positive integer
         if shares < 1:
             return apology("Shares must be postive integer")
 
@@ -289,7 +290,7 @@ def sell():
         db.execute("INSERT INTO transactions (user_id, symbol, name, shares, price, date) VALUES (?, ?, ?, ?, ?, ?)",
                    user_id, stock["symbol"], stock["name"], -1 * shares, stock["price"], datetime.datetime.now())
 
-         # Get user's current available cash
+        # Get user's current available cash
         rows = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
 
         # Ensure the user can afford the purchase

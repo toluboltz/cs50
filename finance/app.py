@@ -76,19 +76,23 @@ def buy():
 
         # Ensure input is not blank
         if not request.form.get("symbol"):
-            return apology("Input is blank", 400)
+            return apology("Input is blank")
 
         # Lookup current stock's price
         stock = lookup(request.form.get("symbol"))
 
         # Ensure symbol is valid
         if not stock:
-            return apology("Invalid Symbol", 400)
+            return apology("Invalid Symbol")
 
         # Ensure number of shares is valid
-        shares = int(request.form.get("shares"))
+        try:
+            shares = int(request.form.get("shares"))
+        except ValueError:
+            return apology("Shares must be integer")
+            
         if shares < 1:
-            return apology("Shares must be postive integer", 400)
+            return apology("Shares must be postive integer")
 
         # Get the user id
         user_id = session["user_id"]
@@ -100,7 +104,7 @@ def buy():
         shares_cost = stock["price"] * shares
         user_cash = rows[0]["cash"]
         if user_cash < shares_cost:
-            return apology("Can't afford", 400)
+            return apology("Can't afford")
 
         # Otherwise, complete purchase and insert into transactions database
         db.execute("INSERT INTO transactions (user_id, symbol, name, shares, price, date) VALUES (?, ?, ?, ?, ?, ?)",

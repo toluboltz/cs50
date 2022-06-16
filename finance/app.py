@@ -270,6 +270,7 @@ def sell():
             return apology("Shares must be postive integer", 400)
 
         # Ensure user owns number of shares
+        
 
 
         # Complete transaction

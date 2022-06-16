@@ -125,7 +125,11 @@ def buy():
 def history():
     """Show history of transactions"""
 
-    return render_template("history.html")
+    # Get all user's transactions
+    transactions = db.execute("SELECT symbol, shares, price, date FROM transactions")
+
+     # User reached route via GET (as by clicking a link or via redirect)
+    return render_template("history.html", transactions=transactions)
 
 
 @app.route("/login", methods=["GET", "POST"])

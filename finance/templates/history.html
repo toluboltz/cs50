@@ -15,7 +15,14 @@
             </tr>
         </thead>
         <tbody>
-            
+            {% for transaction in transactions %}
+                <tr>
+                    <td class="table-start">{{ transaction["symbol"] }}</td>
+                    <td class="table-end">{{ transaction["shares"] }}</td>
+                    <td class="table-end">{{ transaction["price"] | usd }}</td>
+                    <td class="table-end">{{ transaction["date"] }}</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 {% endblock %}

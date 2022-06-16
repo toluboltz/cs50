@@ -56,11 +56,13 @@ def index():
     cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
 
     # Get current price for each stock
-    for i in range(stocks_info):
+    stock_value = 0
+    for i in range(len(stocks_info)):
         stocks_info[i]["price"] = lookup(stocks_info[i]["symbol"])["price"]
         stocks_info[i]["total"] = stocks_info[i]["price"] * stocks_info[i]["shares"]
+        stock_value += stocks_info[i]["total"]
 
-    return render_template("index.html", stocks_info=stocks_info, cash=cash, total=sum(stocks_info["total"])+cash)
+    return render_template("index.html", stocks_info=stocks_info, cash=cash, total=stock_value+cash)
 
 
 @app.route("/buy", methods=["GET", "POST"])

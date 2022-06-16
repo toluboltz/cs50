@@ -234,9 +234,7 @@ def register():
 
         # Insert new username and hashed password into the database
         user_id = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",
-                             request.form.get("username"),
-                             generate_password_hash(request.form.get("password"))
-                  )
+                             request.form.get("username"), generate_password_hash(request.form.get("password")))
 
         # Remember which user has logged in
         session["user_id"] = user_id

@@ -54,6 +54,7 @@ def index():
 
     # Get the user's current cash
     cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+    cash = cash[0]["cash"]
 
     # Get current price for each stock
     stock_value = 0
